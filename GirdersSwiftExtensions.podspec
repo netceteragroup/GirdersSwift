@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
-  s.name     = 'GirdersSwift'
+  s.name     = 'GirdersSwiftExtensions'
   s.version = '0.2.0'
-  s.summary  = 'Girders for iOS, written in Swift.'
+  s.summary  = 'Extensions for Girders for iOS, written in Swift.'
   s.homepage = 'http://www.netcetera.com'
   s.author   = 'Netcetera'
   s.description = 'A library that reduces development time for iOS Swift applications.'
@@ -13,7 +13,6 @@ Pod::Spec.new do |s|
   s.xcconfig = { 'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/GirdersSwift',
                  'SWIFT_ACTIVE_COMPILATION_CONDITIONS[config=Debug]' => 'DEBUG' }
   s.user_target_xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '"${PODS_ROOT}/GirdersSwift/framework"' }
-  s.preserve_paths = 'module.modulemap'
 
   s.license = { :type => 'commercial', :text => %{
                  The copyright to the computer program(s) herein is the property of
@@ -23,13 +22,10 @@ Pod::Spec.new do |s|
                  under which the program(s) have been supplied.2
               } }
 
-
-  s.source_files = 'GirdersSwift/src/main/**/*.{swift}', 'GirdersSwift/CommonCrypto.h'
-  s.exclude_files = 'GirdersSwift/src/main/**/promise/*.{swift}'
-  s.dependency 'SwiftyBeaver', '1.5.2'
-  s.dependency 'KeychainAccess', '3.1.1'
-  s.frameworks = 'Foundation', 'Security'
-  s.vendored_frameworks = 'framework/GRSecurity.framework'
-  s.prepare_command = "ruby updateXcodePath.rb"
+  s.subspec 'Promise' do |promise|
+     promise.source_files = 'GirdersSwift/src/main/**/promise/*.swift'
+     promise.dependency 'PromiseKit'
+     promise.dependency 'GirdersSwift'
+  end
 
 end
