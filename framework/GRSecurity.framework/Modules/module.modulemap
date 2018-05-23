@@ -1,0 +1,6 @@
+framework module GRSecurity {
+  umbrella header "GRSecurity.h"
+
+  export *
+  module * { export * }
+}
