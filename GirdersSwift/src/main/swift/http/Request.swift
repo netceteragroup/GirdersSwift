@@ -177,10 +177,10 @@ public struct MutableRequest : RequestGenerator {
 
             if let bodyToUse = self.body {
                 self.updateHTTPHeaderFields(
-                    headerFields: ["Content-Length" : "\(bodyToUse.count)"])
+                    headerFields: [Constants.ContentLength : "\(bodyToUse.count)"])
             }
         } catch {
-            print("Error. Logger should be introduced")
+            Log.debug("Error creating body from parameters.")
         }
     }
 

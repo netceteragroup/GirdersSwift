@@ -9,7 +9,7 @@ public class Log : LogProtocol {
     
     private static func setupLogger() {
         let console = self.consoleDestination()
-        if let logLevel = Configuration.sharedInstance["logLevel"] as? Int {
+        if let logLevel = Configuration.sharedInstance[Constants.LogLevel] as? Int {
             let minLevel = SwiftyBeaver.Level.init(rawValue: logLevel)
             console.minLevel = minLevel ?? .debug
         } else {

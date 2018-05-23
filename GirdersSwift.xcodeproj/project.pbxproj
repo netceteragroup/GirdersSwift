@@ -41,6 +41,9 @@
 		CAD5E23C1F4C5DEB000B4DCE /* TestUtilDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD5E23B1F4C5DEB000B4DCE /* TestUtilDictionary.swift */; };
 		CAEBA3201F4477A2003C9193 /* TestRequestGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEBA31F1F4477A2003C9193 /* TestRequestGenerator.swift */; };
 		CAEBA3221F447CC1003C9193 /* TestHTTPUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEBA3211F447CC1003C9193 /* TestHTTPUtil.swift */; };
+		E81F717220B5FEF5001B9B24 /* SecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81F717120B5FEF5001B9B24 /* SecureStorage.swift */; };
+		E81F717420B5FF49001B9B24 /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81F717320B5FF49001B9B24 /* KeychainStorage.swift */; };
+		E81F717620B602CE001B9B24 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81F717520B602CE001B9B24 /* Constants.swift */; };
 		E82F15C51F4ACED100B7EC45 /* DefaultSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82F15C41F4ACED100B7EC45 /* DefaultSessionDelegate.swift */; };
 		E8376A181F55DA62002F0339 /* GRSecurity.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E8376A171F55DA62002F0339 /* GRSecurity.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E83CEAA01F387D470030C6B8 /* ConfigUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83CEA9F1F387D470030C6B8 /* ConfigUtil.swift */; };
@@ -127,6 +130,9 @@
 		D3C42DCD874731A80E7D079E /* Pods-GirdersSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GirdersSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-GirdersSwift/Pods-GirdersSwift.release.xcconfig"; sourceTree = "<group>"; };
 		E0495BDA3511DEDDB6BE9E8E /* Pods-GirdersSwift.coverage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GirdersSwift.coverage.xcconfig"; path = "Pods/Target Support Files/Pods-GirdersSwift/Pods-GirdersSwift.coverage.xcconfig"; sourceTree = "<group>"; };
 		E80036AF1F5D828600D02137 /* billTest.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = billTest.jpg; path = GirdersSwift/src/test/resources/billTest.jpg; sourceTree = SOURCE_ROOT; };
+		E81F717120B5FEF5001B9B24 /* SecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
+		E81F717320B5FF49001B9B24 /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
+		E81F717520B602CE001B9B24 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E82F15C41F4ACED100B7EC45 /* DefaultSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSessionDelegate.swift; sourceTree = "<group>"; };
 		E8376A171F55DA62002F0339 /* GRSecurity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GRSecurity.framework; path = framework/GRSecurity.framework; sourceTree = "<group>"; };
 		E83CEA9F1F387D470030C6B8 /* ConfigUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigUtil.swift; sourceTree = "<group>"; };
@@ -275,6 +281,15 @@
 			path = resources;
 			sourceTree = "<group>";
 		};
+		E81F717020B5FEA9001B9B24 /* storage */ = {
+			isa = PBXGroup;
+			children = (
+				E81F717120B5FEF5001B9B24 /* SecureStorage.swift */,
+				E81F717320B5FF49001B9B24 /* KeychainStorage.swift */,
+			);
+			path = storage;
+			sourceTree = "<group>";
+		};
 		E858A4501F17AA8D008AD538 /* util */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +297,7 @@
 				E8B4518A1F30C07E00DC14B8 /* Log.swift */,
 				E8A72DBA1F445AD200BAD955 /* DateStringUtils.swift */,
 				E845D17C20B3433F00D3514D /* SwiftyBeaverLogger.swift */,
+				E81F717520B602CE001B9B24 /* Constants.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -339,6 +355,7 @@
 				E858A4501F17AA8D008AD538 /* util */,
 				E878B7071F0E27650052D1C3 /* http */,
 				E878B72B1F0E2FD90052D1C3 /* serialization */,
+				E81F717020B5FEA9001B9B24 /* storage */,
 				E878B7281F0E2C6F0052D1C3 /* config */,
 			);
 			path = swift;
@@ -538,11 +555,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-UnitTest/Pods-UnitTest-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
 				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHHTTPStubs.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -648,6 +667,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E845D17920B3409500D3514D /* SSLUtil.swift in Sources */,
+				E81F717620B602CE001B9B24 /* Constants.swift in Sources */,
 				E8A72DBB1F445AD200BAD955 /* DateStringUtils.swift in Sources */,
 				E878B7101F0E27B00052D1C3 /* HTTPClient.swift in Sources */,
 				E878B7121F0E27B00052D1C3 /* RequestGenerator.swift in Sources */,
@@ -658,6 +678,7 @@
 				E878B7151F0E27B00052D1C3 /* Util.swift in Sources */,
 				E84F811A204D76A50028E29D /* Errors.swift in Sources */,
 				E878B72F1F0E2FF30052D1C3 /* Serializable.swift in Sources */,
+				E81F717420B5FF49001B9B24 /* KeychainStorage.swift in Sources */,
 				E83CEAA01F387D470030C6B8 /* ConfigUtil.swift in Sources */,
 				E8B4518B1F30C07E00DC14B8 /* Log.swift in Sources */,
 				E82F15C51F4ACED100B7EC45 /* DefaultSessionDelegate.swift in Sources */,
@@ -665,6 +686,7 @@
 				E878B7141F0E27B00052D1C3 /* ServiceEndpoint.swift in Sources */,
 				E878B72A1F0E2C840052D1C3 /* Configuration.swift in Sources */,
 				E878B70F1F0E27AC0052D1C3 /* HTTP.swift in Sources */,
+				E81F717220B5FEF5001B9B24 /* SecureStorage.swift in Sources */,
 				E8A635BC2024A73300A3021E /* ResponseHandlers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

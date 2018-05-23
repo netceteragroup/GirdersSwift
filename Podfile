@@ -6,6 +6,7 @@ use_frameworks!
 
 target :GirdersSwift do
   pod 'SwiftyBeaver'
+  pod 'KeychainAccess'
 end
 
 target :UnitTest do

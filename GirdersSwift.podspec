@@ -8,6 +8,7 @@ Pod::Spec.new do |s|
   s.platform = :ios, '9.0'
   s.source = { :git => 'https://extranet.netcetera.biz/bitbucket/scm/nca312ios/girders-swift.git' }
   s.requires_arc = true
+  s.swift_version = "4.1"
   s.module_name = 'GirdersSwift'
   s.xcconfig = { 'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/GirdersSwift',
                  'SWIFT_ACTIVE_COMPILATION_CONDITIONS[config=Debug]' => 'DEBUG' }
@@ -24,7 +25,8 @@ Pod::Spec.new do |s|
 
 
   s.source_files = 'GirdersSwift/src/main/**/*.{swift}', 'GirdersSwift/CommonCrypto.h'
-  s.dependency 'SwiftyBeaver'
+  s.dependency 'SwiftyBeaver', '1.5.2'
+  s.dependency 'KeychainAccess', '3.1.1'
   s.frameworks = 'Foundation', 'Security'
   s.vendored_frameworks = 'framework/GRSecurity.framework'
   s.prepare_command = "ruby updateXcodePath.rb"
