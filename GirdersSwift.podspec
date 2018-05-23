@@ -25,9 +25,16 @@ Pod::Spec.new do |s|
 
 
   s.source_files = 'GirdersSwift/src/main/**/*.{swift}', 'GirdersSwift/CommonCrypto.h'
+  s.exclude_files = 'GirdersSwift/src/main/**/promise/*.{swift}'
   s.dependency 'SwiftyBeaver', '1.5.2'
   s.dependency 'KeychainAccess', '3.1.1'
   s.frameworks = 'Foundation', 'Security'
   s.vendored_frameworks = 'framework/GRSecurity.framework'
   s.prepare_command = "ruby updateXcodePath.rb"
+
+  s.subspec 'Promise' do |promise|
+    promise.source_files = 'GirdersSwift/src/main/**/promise/*.swift'
+    promise.dependency 'PromiseKit'
+  end
+
 end

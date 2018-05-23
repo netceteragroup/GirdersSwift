@@ -44,6 +44,7 @@
 		E81F717220B5FEF5001B9B24 /* SecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81F717120B5FEF5001B9B24 /* SecureStorage.swift */; };
 		E81F717420B5FF49001B9B24 /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81F717320B5FF49001B9B24 /* KeychainStorage.swift */; };
 		E81F717620B602CE001B9B24 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81F717520B602CE001B9B24 /* Constants.swift */; };
+		E81F717920B61354001B9B24 /* HTTPPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81F717820B61354001B9B24 /* HTTPPromise.swift */; };
 		E82F15C51F4ACED100B7EC45 /* DefaultSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82F15C41F4ACED100B7EC45 /* DefaultSessionDelegate.swift */; };
 		E8376A181F55DA62002F0339 /* GRSecurity.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E8376A171F55DA62002F0339 /* GRSecurity.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E83CEAA01F387D470030C6B8 /* ConfigUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83CEA9F1F387D470030C6B8 /* ConfigUtil.swift */; };
@@ -133,6 +134,7 @@
 		E81F717120B5FEF5001B9B24 /* SecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
 		E81F717320B5FF49001B9B24 /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
 		E81F717520B602CE001B9B24 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E81F717820B61354001B9B24 /* HTTPPromise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPPromise.swift; sourceTree = "<group>"; };
 		E82F15C41F4ACED100B7EC45 /* DefaultSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSessionDelegate.swift; sourceTree = "<group>"; };
 		E8376A171F55DA62002F0339 /* GRSecurity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GRSecurity.framework; path = framework/GRSecurity.framework; sourceTree = "<group>"; };
 		E83CEA9F1F387D470030C6B8 /* ConfigUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigUtil.swift; sourceTree = "<group>"; };
@@ -290,6 +292,14 @@
 			path = storage;
 			sourceTree = "<group>";
 		};
+		E81F717720B61022001B9B24 /* promise */ = {
+			isa = PBXGroup;
+			children = (
+				E81F717820B61354001B9B24 /* HTTPPromise.swift */,
+			);
+			path = promise;
+			sourceTree = "<group>";
+		};
 		E858A4501F17AA8D008AD538 /* util */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,6 +367,7 @@
 				E878B72B1F0E2FD90052D1C3 /* serialization */,
 				E81F717020B5FEA9001B9B24 /* storage */,
 				E878B7281F0E2C6F0052D1C3 /* config */,
+				E81F717720B61022001B9B24 /* promise */,
 			);
 			path = swift;
 			sourceTree = "<group>";
@@ -556,12 +567,14 @@
 				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
 				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHHTTPStubs.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -676,6 +689,7 @@
 				E845D17D20B3433F00D3514D /* SwiftyBeaverLogger.swift in Sources */,
 				E878B72E1F0E2FF00052D1C3 /* Deserializable.swift in Sources */,
 				E878B7151F0E27B00052D1C3 /* Util.swift in Sources */,
+				E81F717920B61354001B9B24 /* HTTPPromise.swift in Sources */,
 				E84F811A204D76A50028E29D /* Errors.swift in Sources */,
 				E878B72F1F0E2FF30052D1C3 /* Serializable.swift in Sources */,
 				E81F717420B5FF49001B9B24 /* KeychainStorage.swift in Sources */,
