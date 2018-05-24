@@ -34,6 +34,7 @@ platform :ios do
     slather(
       travis: true,
       scheme: "GirdersSwift",
+      coveralls: true,
       proj: "GirdersSwift.xcodeproj",
       workspace: "GirdersSwift.xcworkspace"
     )
