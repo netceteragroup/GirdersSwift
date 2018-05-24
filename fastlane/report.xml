@@ -5,27 +5,34 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: Verifying required fastlane version" time="0.00243">
+      <testcase classname="fastlane.lanes" name="0: Verifying required fastlane version" time="0.002611">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.002023">
+      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.013429">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: cocoapods" time="4.058346">
+      <testcase classname="fastlane.lanes" name="2: cocoapods" time="4.244971">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="3: Switch to ios test lane" time="0.002889">
+      <testcase classname="fastlane.lanes" name="3: Switch to ios test lane" time="0.002597">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="4: scan" time="3.470801">
+      <testcase classname="fastlane.lanes" name="4: scan" time="57.033799">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="5: slather" time="16.87783">
+        
+          <failure message="/Users/mmitrevs/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/gems/fastlane-2.19.1/fastlane/lib/fastlane/actions/actions_helper.rb:48:in `execute_action'&#10;/Users/mmitrevs/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/gems/fastlane-2.19.1/fastlane/lib/fastlane/runner.rb:221:in `block in execute_action'&#10;/Users/mmitrevs/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/gems/fastlane-2.19.1/fastlane/lib/fastlane/runner.rb:217:in `chdir'&#10;/Users/mmitrevs/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/gems/fastlane-2.19.1/fastlane/lib/fastlane/runner.rb:217:in `execute_action'&#10;/Users/mmitrevs/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/gems/fastlane-2.19.1/fastlane/lib/fastlane/runner.rb:139:in `trigger_action_by_name'&#10;/Users/mmitrevs/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/gems/fastlane-2.19.1/fastlane/lib/fastlane/fast_file.rb:146:in `method_missing'&#10;Fastfile:34:in `block (2 levels) in parsing_binding'&#10;/Users/mmitrevs/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/gems/fastlane-2.19.1/fastlane/lib/fastlane/lane.rb:33:in `call'&#10;/Users/mmitrevs/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/gems/fastlane-2.19.1/fastlane/lib/fastlane/lane.rb:33:in `call'&#10;/Users/mmitrevs/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/gems/fastlane-2.19.1/fastlane/lib/fastlane/runner.rb:49:in `block in execute'&#10;/Users/mmitrevs/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/gems/fastlane-2.19.1/fastlane/lib/fastlane/runner.rb:45:in `chdir'&#10;/Users/mmitrevs/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/gems/fastlane-2.19.1/fastlane/lib/fastlane/runner.rb:45:in `execute'&#10;/Users/mmitrevs/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/gems/fastlane-2.19.1/fastlane/lib/fastlane/lane_manager.rb:52:in `cruise_lane'&#10;/Users/mmitrevs/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/gems/fastlane-2.19.1/fastlane/lib/fastlane/command_line_handler.rb:30:in `handle'&#10;/Users/mmitrevs/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/gems/fastlane-2.19.1/fastlane/lib/fastlane/commands_generator.rb:105:in `block (2 levels) in run'&#10;/Users/mmitrevs/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/gems/commander-4.4.3/lib/commander/command.rb:178:in `call'&#10;/Users/mmitrevs/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/gems/commander-4.4.3/lib/commander/command.rb:178:in `call'&#10;/Users/mmitrevs/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/gems/commander-4.4.3/lib/commander/command.rb:153:in `run'&#10;/Users/mmitrevs/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/gems/commander-4.4.3/lib/commander/runner.rb:446:in `run_active_command'&#10;/Users/mmitrevs/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/gems/fastlane-2.19.1/fastlane_core/lib/fastlane_core/ui/fastlane_runner.rb:38:in `run!'&#10;/Users/mmitrevs/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/gems/commander-4.4.3/lib/commander/delegates.rb:15:in `run!'&#10;/Users/mmitrevs/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/gems/fastlane-2.19.1/fastlane/lib/fastlane/commands_generator.rb:302:in `run'&#10;/Users/mmitrevs/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/gems/fastlane-2.19.1/fastlane/lib/fastlane/commands_generator.rb:42:in `start'&#10;/Users/mmitrevs/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/gems/fastlane-2.19.1/fastlane/lib/fastlane/cli_tools_distributor.rb:65:in `take_off'&#10;/Users/mmitrevs/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/gems/fastlane-2.19.1/bin/fastlane:15:in `&lt;top (required)&gt;'&#10;/Users/mmitrevs/.fastlane/bin/bundle/bin/fastlane:22:in `load'&#10;/Users/mmitrevs/.fastlane/bin/bundle/bin/fastlane:22:in `&lt;main&gt;'&#10;&#10;ERROR: Failed to build gem native extension.&#10;&#10;    current directory: /Users/mmitrevs/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/gems/nokogiri-1.8.2/ext/nokogiri&#10;/Users/mmitrevs/.fastlane/bin/bundle/bin/ruby -r ./siteconf20180524-6025-6fv1jk.rb extconf.rb&#10;checking if the C compiler accepts ... *** extconf.rb failed ***&#10;Could not create Makefile due to some reason, probably lack of necessary&#10;libraries and/or headers.  Check the mkmf.log file for more details.  You may&#10;need configuration options.&#10;&#10;Provided configuration options:&#10;	--with-opt-dir&#10;	--without-opt-dir&#10;	--with-opt-include&#10;	--without-opt-include=${opt-dir}/include&#10;	--with-opt-lib&#10;	--without-opt-lib=${opt-dir}/lib&#10;	--with-make-prog&#10;	--without-make-prog&#10;	--srcdir=.&#10;	--curdir&#10;	--ruby=/Users/mmitrevs/.fastlane/bin/bundle/bin/$(RUBY_BASE_NAME)&#10;	--help&#10;	--clean&#10;/Users/mmitrevs/.fastlane/bin/bundle/lib/ruby/2.2.0/mkmf.rb:456:in `try_do': The compiler failed to generate an executable file. (RuntimeError)&#10;You have to install development tools first.&#10;	from /Users/mmitrevs/.fastlane/bin/bundle/lib/ruby/2.2.0/mkmf.rb:571:in `block in try_compile'&#10;	from /Users/mmitrevs/.fastlane/bin/bundle/lib/ruby/2.2.0/mkmf.rb:522:in `with_werror'&#10;	from /Users/mmitrevs/.fastlane/bin/bundle/lib/ruby/2.2.0/mkmf.rb:571:in `try_compile'&#10;	from extconf.rb:138:in `nokogiri_try_compile'&#10;	from extconf.rb:162:in `block in add_cflags'&#10;	from /Users/mmitrevs/.fastlane/bin/bundle/lib/ruby/2.2.0/mkmf.rb:619:in `with_cflags'&#10;	from extconf.rb:161:in `add_cflags'&#10;	from extconf.rb:410:in `&lt;main&gt;'&#10;&#10;To see why this extension failed to compile, please check the mkmf.log which can be found here:&#10;&#10;  /Users/mmitrevs/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/extensions/x86_64-darwin-15/2.2.0-static/nokogiri-1.8.2/mkmf.log&#10;&#10;extconf failed, exit code 1&#10;&#10;Gem files will remain installed in /Users/mmitrevs/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/gems/nokogiri-1.8.2 for inspection.&#10;Results logged to /Users/mmitrevs/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/extensions/x86_64-darwin-15/2.2.0-static/nokogiri-1.8.2/gem_make.out&#10;" />
         
       </testcase>
     

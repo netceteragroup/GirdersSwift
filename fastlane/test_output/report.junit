@@ -1,53 +1,53 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <testsuites name='UnitTest.xctest' tests='68' failures='0'>
   <testsuite name='UnitTest.TestConfigUtil' tests='3' failures='0'>
-    <testcase classname='UnitTest.TestConfigUtil' name='testThatLoadConfigReturnsDictionarywhenResourceFound' time='0.003'/>
+    <testcase classname='UnitTest.TestConfigUtil' name='testThatLoadConfigReturnsDictionarywhenResourceFound' time='0.006'/>
     <testcase classname='UnitTest.TestConfigUtil' name='testThatLoadConfigReturnsEmptyDictionaryWhenConfigNotFound' time='0.002'/>
     <testcase classname='UnitTest.TestConfigUtil' name='testThatPlistPathFindsExistingResources' time='0.002'/>
   </testsuite>
   <testsuite name='UnitTest.TestConfiguration' tests='3' failures='0'>
-    <testcase classname='UnitTest.TestConfiguration' name='testThatConfigurationEnvValuesCanBeLoaded' time='0.004'/>
-    <testcase classname='UnitTest.TestConfiguration' name='testThatConfigurationValuesCanBeLoadedWithSubscript' time='0.001'/>
-    <testcase classname='UnitTest.TestConfiguration' name='testThatDefaultConfigurationValuesCanBeLoaded' time='0.001'/>
+    <testcase classname='UnitTest.TestConfiguration' name='testThatConfigurationEnvValuesCanBeLoaded' time='0.007'/>
+    <testcase classname='UnitTest.TestConfiguration' name='testThatConfigurationValuesCanBeLoadedWithSubscript' time='0.002'/>
+    <testcase classname='UnitTest.TestConfiguration' name='testThatDefaultConfigurationValuesCanBeLoaded' time='0.004'/>
   </testsuite>
   <testsuite name='UnitTest.TestDateStringUtils' tests='10' failures='0'>
-    <testcase classname='UnitTest.TestDateStringUtils' name='testThatParseRFC3339TimeStampReturnsExpectedDate' time='0.012'/>
-    <testcase classname='UnitTest.TestDateStringUtils' name='testThatParseRFC3339TimeStampReturnsNilOnEmptyString' time='0.003'/>
-    <testcase classname='UnitTest.TestDateStringUtils' name='testThatParseRFC3339TimeStampReturnsNilOnIncorectTimeStamp' time='0.001'/>
-    <testcase classname='UnitTest.TestDateStringUtils' name='testThatParseRFC3339TimeStamReturnsNilOnIncorectString' time='0.001'/>
-    <testcase classname='UnitTest.TestDateStringUtils' name='testThatParseRFC822ReturnExpectedDate' time='0.006'/>
-    <testcase classname='UnitTest.TestDateStringUtils' name='testThatParseRFC822TimeStampRetunsNullOnIncorectTimeStamp' time='0.001'/>
-    <testcase classname='UnitTest.TestDateStringUtils' name='testThatParseRFC822TimeStampReturnsNilForEmptyString' time='0.001'/>
-    <testcase classname='UnitTest.TestDateStringUtils' name='testThatParseRFC822TimeStamReturnsNilOnIncorectString' time='0.001'/>
-    <testcase classname='UnitTest.TestDateStringUtils' name='testThatToRFC3339StringReturnsExpectedTimeStamp' time='0.001'/>
-    <testcase classname='UnitTest.TestDateStringUtils' name='testThatToRFC822StringRetunsExpectedTimeStamp' time='0.001'/>
+    <testcase classname='UnitTest.TestDateStringUtils' name='testThatParseRFC3339TimeStampReturnsExpectedDate' time='0.015'/>
+    <testcase classname='UnitTest.TestDateStringUtils' name='testThatParseRFC3339TimeStampReturnsNilOnEmptyString' time='0.005'/>
+    <testcase classname='UnitTest.TestDateStringUtils' name='testThatParseRFC3339TimeStampReturnsNilOnIncorectTimeStamp' time='0.003'/>
+    <testcase classname='UnitTest.TestDateStringUtils' name='testThatParseRFC3339TimeStamReturnsNilOnIncorectString' time='0.006'/>
+    <testcase classname='UnitTest.TestDateStringUtils' name='testThatParseRFC822ReturnExpectedDate' time='0.014'/>
+    <testcase classname='UnitTest.TestDateStringUtils' name='testThatParseRFC822TimeStampRetunsNullOnIncorectTimeStamp' time='0.003'/>
+    <testcase classname='UnitTest.TestDateStringUtils' name='testThatParseRFC822TimeStampReturnsNilForEmptyString' time='0.002'/>
+    <testcase classname='UnitTest.TestDateStringUtils' name='testThatParseRFC822TimeStamReturnsNilOnIncorectString' time='0.002'/>
+    <testcase classname='UnitTest.TestDateStringUtils' name='testThatToRFC3339StringReturnsExpectedTimeStamp' time='0.002'/>
+    <testcase classname='UnitTest.TestDateStringUtils' name='testThatToRFC822StringRetunsExpectedTimeStamp' time='0.003'/>
   </testsuite>
   <testsuite name='UnitTest.TestEndpoint' tests='4' failures='0'>
-    <testcase classname='UnitTest.TestEndpoint' name='testEndpoint' time='0.003'/>
-    <testcase classname='UnitTest.TestEndpoint' name='testThatRequestGenratorReturnsGenerator' time='0.003'/>
-    <testcase classname='UnitTest.TestEndpoint' name='testThatTestServiceEndpointAppendsExpectedQueryParameters' time='0.001'/>
-    <testcase classname='UnitTest.TestEndpoint' name='testThatTestServiseEndpointGetterReturnsUrl' time='0.001'/>
+    <testcase classname='UnitTest.TestEndpoint' name='testEndpoint' time='0.007'/>
+    <testcase classname='UnitTest.TestEndpoint' name='testThatRequestGenratorReturnsGenerator' time='0.005'/>
+    <testcase classname='UnitTest.TestEndpoint' name='testThatTestServiceEndpointAppendsExpectedQueryParameters' time='0.002'/>
+    <testcase classname='UnitTest.TestEndpoint' name='testThatTestServiseEndpointGetterReturnsUrl' time='0.002'/>
   </testsuite>
   <testsuite name='UnitTest.TestHTTPUtil' tests='4' failures='0'>
-    <testcase classname='UnitTest.TestHTTPUtil' name='testPlusEquals_extendsDictionary_whenKeysNotMatch' time='0.001'/>
+    <testcase classname='UnitTest.TestHTTPUtil' name='testPlusEquals_extendsDictionary_whenKeysNotMatch' time='0.002'/>
     <testcase classname='UnitTest.TestHTTPUtil' name='testPlusEquals_ignoresNils_whenMerging' time='0.001'/>
-    <testcase classname='UnitTest.TestHTTPUtil' name='testPlusEquals_overwritesDictionaryValues_whenKeysIntersecting' time='0.001'/>
-    <testcase classname='UnitTest.TestHTTPUtil' name='testThatPipeOperatorWorksAsExpected' time='0.001'/>
+    <testcase classname='UnitTest.TestHTTPUtil' name='testPlusEquals_overwritesDictionaryValues_whenKeysIntersecting' time='0.003'/>
+    <testcase classname='UnitTest.TestHTTPUtil' name='testThatPipeOperatorWorksAsExpected' time='0.002'/>
   </testsuite>
   <testsuite name='UnitTest.TestHttpClient' tests='4' failures='0'>
-    <testcase classname='UnitTest.TestHttpClient' name='testClientWitUrl' time='0.682'/>
-    <testcase classname='UnitTest.TestHttpClient' name='testThatHttpClientExecutesGetWithUrl' time='0.311'/>
-    <testcase classname='UnitTest.TestHttpClient' name='testThatRequestReturnsBody' time='0.637'/>
-    <testcase classname='UnitTest.TestHttpClient' name='testThatRequestWithResponseHandlerRetrurnsBodyObject' time='0.625'/>
+    <testcase classname='UnitTest.TestHttpClient' name='testClientWitUrl' time='1.057'/>
+    <testcase classname='UnitTest.TestHttpClient' name='testThatHttpClientExecutesGetWithUrl' time='0.518'/>
+    <testcase classname='UnitTest.TestHttpClient' name='testThatRequestReturnsBody' time='1.115'/>
+    <testcase classname='UnitTest.TestHttpClient' name='testThatRequestWithResponseHandlerRetrurnsBodyObject' time='0.829'/>
   </testsuite>
   <testsuite name='UnitTest.TestMutableRequest' tests='2' failures='0'>
-    <testcase classname='UnitTest.TestMutableRequest' name='testupdateHTTPHeaderFields' time='0.004'/>
+    <testcase classname='UnitTest.TestMutableRequest' name='testupdateHTTPHeaderFields' time='0.002'/>
     <testcase classname='UnitTest.TestMutableRequest' name='testUpdateParameters' time='0.001'/>
   </testsuite>
   <testsuite name='UnitTest.TestRequest' tests='4' failures='0'>
-    <testcase classname='UnitTest.TestRequest' name='testThatRequestAndWraperAreEqual' time='0.002'/>
+    <testcase classname='UnitTest.TestRequest' name='testThatRequestAndWraperAreEqual' time='0.001'/>
     <testcase classname='UnitTest.TestRequest' name='testThatRequestIsCreatedWithServiceEndpoint' time='0.001'/>
-    <testcase classname='UnitTest.TestRequest' name='testThatRequestIsGeneratedWithEmptyParameters' time='0.001'/>
+    <testcase classname='UnitTest.TestRequest' name='testThatRequestIsGeneratedWithEmptyParameters' time='0.002'/>
     <testcase classname='UnitTest.TestRequest' name='testThatRequestObjectsAreNotEqual' time='0.001'/>
   </testsuite>
   <testsuite name='UnitTest.TestSerialization' tests='1' failures='0'>
@@ -83,9 +83,9 @@
     <testcase classname='UnitTest.TestUtilString' name='testThatUrlEncodedStringWithEncodinReturnEncoding' time='0.001'/>
   </testsuite>
   <testsuite name='UnitTest.TestUtilURL' tests='12' failures='0'>
-    <testcase classname='UnitTest.TestUtilURL' name='testThatAppendQueryStringDoesNotOverrideExistingQuery' time='0.002'/>
+    <testcase classname='UnitTest.TestUtilURL' name='testThatAppendQueryStringDoesNotOverrideExistingQuery' time='0.001'/>
     <testcase classname='UnitTest.TestUtilURL' name='testThatAppendQueryStringReturnsNilOnInvalidQueryString' time='0.001'/>
-    <testcase classname='UnitTest.TestUtilURL' name='testThatAppendQueryStringReturnsNilOnQueryStringWithSpacesInParams' time='0.002'/>
+    <testcase classname='UnitTest.TestUtilURL' name='testThatAppendQueryStringReturnsNilOnQueryStringWithSpacesInParams' time='0.001'/>
     <testcase classname='UnitTest.TestUtilURL' name='testThatAppendQueryStringReturnsNilOnQueryStringWithUmlautesInParams' time='0.001'/>
     <testcase classname='UnitTest.TestUtilURL' name='testThatAppendQueryStringReturnsSelfOnEpmtyQueryString' time='0.001'/>
     <testcase classname='UnitTest.TestUtilURL' name='testThatAppendQueryStringReturnsUrlWithQuery' time='0.001'/>
