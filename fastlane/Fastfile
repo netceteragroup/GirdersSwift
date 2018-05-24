@@ -27,6 +27,15 @@ platform :ios do
     )
   end
 
+  desc "Runs coverage"
+  lane :coverage do
+    slather(
+      travis: true,
+      scheme: "GirdersSwift",
+      workspace: "GirdersSwift.xcworkspace"
+    )
+  end
+
 end
 
 
