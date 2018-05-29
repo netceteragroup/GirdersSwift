@@ -254,3 +254,15 @@ func executeRequestAsync<T>(request: Request) -> Promise<Response<T>> {
 ```
 
 You can create similar extensions for any async programming abstraction you need. RXSwift will be added soon.
+
+### Configuration ###
+
+Usually, when developing apps that talk to a REST service, we need to support several environments, such as development, staging and production. With our Configuration class, you can support such environments by providing different plist files. For production, the file should be named Configuration.plist and for an environment, Configuration-env.plist. 
+
+When the app is running in production mode, only the Configuration file is used. Otherwise, the two configurations are merged, where the Configuration-env file has bigger priority.
+
+The Configuration is available as a Singleton, and getting a value from it is pretty straightforward.
+
+```swift
+let apiURL = Configuration.sharedInstance[Constants.APIURLKey] as? String
+```
