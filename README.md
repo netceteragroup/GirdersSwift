@@ -266,6 +266,16 @@ The Configuration is available as a Singleton, and getting a value from it is pr
 ```swift
 let apiURL = Configuration.sharedInstance[Constants.APIURLKey] as? String
 ```
+### Secure Storage ###
+
+There's a SecureStorage protocol, that defines methods for saving and retrieving data to a secure storage. This protocol is implemented by the KeychainStorage class, that uses another open source framework, KeychainAccess (https://github.com/kishikawakatsumi/KeychainAccess).
+
+Example usage:
+
+```swift
+KeychainStorage.shared.save(string: username, forKey: Constants.Username)
+let username = KeychainStorage.shared.string(forKey: Constants.Username)
+```
 
 ### Areas for improvement ###
 
