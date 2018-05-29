@@ -266,3 +266,14 @@ The Configuration is available as a Singleton, and getting a value from it is pr
 ```swift
 let apiURL = Configuration.sharedInstance[Constants.APIURLKey] as? String
 ```
+
+### Areas for improvement ###
+
+- Add more unit tests
+- Improve documentation
+- Add methods for downloading large files
+- Extend the Configuration class
+- Add RXSwift support
+- Add XML support
+- Add a persistence layer
+- And a lot more.
