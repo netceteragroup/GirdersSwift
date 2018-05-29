@@ -37,7 +37,7 @@ public struct Request: Equatable {
     ///
     /// It is the caller's responsibility to ensure that the values represent valid `ServiceEndpoint` values, if that is what is desired.
     public init (endpoint: ServiceEndpoint) {
-        var mutableRequest = endpoint.requestGenerator.generateRequest(method: endpoint.method)
+        var mutableRequest = endpoint.requestGenerator.generateRequest(withMethod: endpoint.method)
         mutableRequest.updateParameters(parameters: endpoint.parameters)
         mutableRequest.updateQueryParameters(parameters: endpoint.queryParameters)
         self.parameters = mutableRequest.parameters
@@ -71,7 +71,7 @@ public struct Request: Equatable {
                 parameters: [String: Any],
                 queryParameters: [String: Any] = [:],
                 requestGenerator: RequestGenerator) {
-        var mutableRequest = requestGenerator.generateRequest(method: method)
+        var mutableRequest = requestGenerator.generateRequest(withMethod: method)
         mutableRequest.updateParameters(parameters: parameters)
         mutableRequest.updateQueryParameters(parameters: queryParameters)
         

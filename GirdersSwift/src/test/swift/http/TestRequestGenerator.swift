@@ -57,7 +57,7 @@ class TestStandardRequestGenerator: XCTestCase {
         let httpMethod = HTTPMethod.GET
         
         //When
-        let generateRequest = mockGenerator.generateRequest(method: httpMethod)
+        let generateRequest = mockGenerator.generateRequest(withMethod: httpMethod)
         
         //Then
         XCTAssertEqual(httpMethod, generateRequest.method)
@@ -100,7 +100,7 @@ class TestMutableRequest: XCTestCase {
     let mockGenerator = TestMockRequestGenerator()
 
     func testUpdateParameters() {
-        var request = mockGenerator.generateRequest(method: .POST)
+        var request = mockGenerator.generateRequest(withMethod: .POST)
         let additionalParameters = ["TestParam": MockClass()]
         
         request.updateParameters(parameters: additionalParameters)

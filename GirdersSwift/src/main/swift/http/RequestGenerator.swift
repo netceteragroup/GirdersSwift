@@ -37,7 +37,7 @@ public protocol RequestGenerator {
     ///
     /// - Parameter method: The method of the http request.
     /// - Returns: A mutable request which can be changed afterwards.
-    func generateRequest(method: HTTPMethod) -> MutableRequest
+    func generateRequest(withMethod method: HTTPMethod) -> MutableRequest
 }
 
 /// Default implementation of the RequestGenerator.
@@ -117,7 +117,7 @@ public extension RequestGenerator {
         return request
     }
     
-    public func generateRequest(method: HTTPMethod) -> MutableRequest {
+    public func generateRequest(withMethod method: HTTPMethod) -> MutableRequest {
         return request(withMethod: method) |> withJsonSupport
     }
 
