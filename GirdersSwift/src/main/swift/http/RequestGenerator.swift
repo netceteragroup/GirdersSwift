@@ -12,7 +12,7 @@ public protocol RequestGenerator {
     ///
     /// - Parameter method: The method how the request should be done.
     /// - Returns: A mutable request which can be changed afterwards.
-    func standardRequestWithMethod(method: HTTPMethod) -> MutableRequest
+    func request(withMethod method: HTTPMethod) -> MutableRequest
     
     /// Creates a request with basic auth.
     ///
@@ -43,18 +43,18 @@ public protocol RequestGenerator {
 /// Default implementation of the RequestGenerator.
 public extension RequestGenerator {
 
-    public func getConfiguration() -> Configuration {
+    public func configuration() -> Configuration {
         return Configuration.sharedInstance
     }
 
-    public func standardRequestWithMethod(method: HTTPMethod) -> MutableRequest {
+    public func request(withMethod method: HTTPMethod) -> MutableRequest {
         return MutableRequest(method: method)
     }
 
     public func withBasicAuth(request: MutableRequest) -> MutableRequest {
         var request = request
-        let username = getConfiguration()[Constants.AuthUsername] as? String
-        let password = getConfiguration()[Constants.AuthPassword] as? String
+        let username = configuration()[Constants.AuthUsername] as? String
+        let password = configuration()[Constants.AuthPassword] as? String
         if let username = username, let password = password {
             let authorizationString = "\(username):\(password)"
             if let authorizationData = authorizationString.data(using: String.Encoding.utf8) {
@@ -118,7 +118,7 @@ public extension RequestGenerator {
     }
     
     public func generateRequest(method: HTTPMethod) -> MutableRequest {
-        return standardRequestWithMethod(method: method) |> withJsonSupport
+        return request(withMethod: method) |> withJsonSupport
     }
 
 }

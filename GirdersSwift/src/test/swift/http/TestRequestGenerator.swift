@@ -18,7 +18,7 @@ class TestStandardRequestGenerator: XCTestCase {
     let mockGenerator = TestMockRequestGenerator()
     
     func testStandardRequestWithMethodAlwaysReturnsRequest() {
-        XCTAssertNotNil(mockGenerator.standardRequestWithMethod(method: HTTPMethod.GET))
+        XCTAssertNotNil(mockGenerator.request(withMethod: HTTPMethod.GET))
     }
     
     func testWithBasicAuth_returnsRequestWithAuthorization_whenUsernamePasswordAreConfigured() {
@@ -109,7 +109,7 @@ class TestMutableRequest: XCTestCase {
     }
     
     func testupdateHTTPHeaderFields() {
-        var request = mockGenerator.standardRequestWithMethod(method: .POST) |> mockGenerator.withBasicAuth |> mockGenerator.withJsonSupport
+        var request = mockGenerator.request(withMethod: .POST) |> mockGenerator.withBasicAuth |> mockGenerator.withJsonSupport
         
         XCTAssertEqual(request.headerFields["Accept"], "application/json")
         XCTAssertNotNil(request.headerFields["Authorization"])
