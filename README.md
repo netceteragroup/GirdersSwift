@@ -277,6 +277,49 @@ KeychainStorage.shared.save(string: username, forKey: Constants.Username)
 let username = KeychainStorage.shared.string(forKey: Constants.Username)
 ```
 
+### Utilities ###
+
+#### Logging ####
+
+There's a LogProtocol, which enables you to log at different levels, such as:
+- verbose
+- debug
+- info
+- warning
+- error
+- fatal
+
+An implementation is provided with another open sourced logger, SwiftyBeaver (https://github.com/SwiftyBeaver/SwiftyBeaver). You can control the log level for different environments by setting the logLevel value in the Configuration.plist file.
+
+#### Translation ####
+
+If you need to support many languages, but you want to share the texts with the Android app, we have defined our own XML format, that we call trema. There's a trema.rb script in the repo, that converts a trema file to Apple's .strings format. Here's how our trema files look like:
+
+```
+<trema masterLang="de"
+       noNamespaceSchemaLocation="http://software.group.nca/trema/schema/trema-1.0.xsd">
+  <text key="app_name">
+    <context/>
+    <value lang="de" status="translated">Your DE App Name</value>
+    <value lang="en" status="translated">Your EN App Name</value>
+    <value lang="fr" status="translated">Your FR App Name</value>
+    <value lang="it" status="translated">Your IT App Name</value>
+  </text>
+</trema>
+```
+
+The translations are referenced by key, using the translate function.
+
+```swift
+struct Texts {
+    static let AppName = translate("app_name")
+}
+```
+
+#### Date String utils ####
+
+There are utils for converting Date to String and vice versa. Converting to and parsing dates from RFC822 and RFC3339 are supported.
+
 ### Areas for improvement ###
 
 - Add more unit tests
