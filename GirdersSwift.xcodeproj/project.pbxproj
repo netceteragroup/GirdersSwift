@@ -22,6 +22,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		40ADA41C20C02E1C00703B4E /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40ADA41B20C02E1C00703B4E /* Container.swift */; };
+		40ADA41F20C0333B00703B4E /* TestContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40ADA41E20C0333B00703B4E /* TestContainer.swift */; };
 		7D45169E3251943569170BBC /* Pods_UnitTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F928DF890B5B2241F58230A /* Pods_UnitTest.framework */; };
 		8B5212FC473ED696EE78E1BA /* Pods_UnitTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 911CFB332010A59C00D7DEA6 /* Pods_UnitTest.framework */; };
 		911CFB302010A58100D7DEA6 /* Pods_GirdersSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 911CFB312010A58100D7DEA6 /* Pods_GirdersSwift.framework */; };
@@ -107,6 +109,8 @@
 /* Begin PBXFileReference section */
 		34E1B865F60707EC702A6657 /* Pods_GirdersSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GirdersSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E504E1344314B7CF0B0C5E1 /* Pods-UnitTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnitTest/Pods-UnitTest.debug.xcconfig"; sourceTree = "<group>"; };
+		40ADA41B20C02E1C00703B4E /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		40ADA41E20C0333B00703B4E /* TestContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestContainer.swift; sourceTree = "<group>"; };
 		4F928DF890B5B2241F58230A /* Pods_UnitTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnitTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		779892404BD28B4F7898A7B1 /* Pods-UnitTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-UnitTest/Pods-UnitTest.release.xcconfig"; sourceTree = "<group>"; };
 		850D68D85BC7AC1F788B2DD6 /* Pods-UnitTest.coverage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitTest.coverage.xcconfig"; path = "Pods/Target Support Files/Pods-UnitTest/Pods-UnitTest.coverage.xcconfig"; sourceTree = "<group>"; };
@@ -206,6 +210,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		40ADA41A20C02E0600703B4E /* dependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+				40ADA41B20C02E1C00703B4E /* Container.swift */,
+			);
+			path = dependencyInjection;
+			sourceTree = "<group>";
+		};
+		40ADA41D20C0330300703B4E /* dependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+				40ADA41E20C0333B00703B4E /* TestContainer.swift */,
+			);
+			path = dependencyInjection;
+			sourceTree = "<group>";
+		};
 		9F15D8391FA98D9D283D5CB0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +253,7 @@
 		CA325AC91F442BE2003B1BA9 /* swift */ = {
 			isa = PBXGroup;
 			children = (
+				40ADA41D20C0330300703B4E /* dependencyInjection */,
 				CA325ACA1F442BFD003B1BA9 /* util */,
 				CAEBA31C1F446D64003C9193 /* http */,
 				CAB311D71F4F0BD1002BBB0F /* serialization */,
@@ -362,6 +383,7 @@
 		E878B7061F0E27180052D1C3 /* swift */ = {
 			isa = PBXGroup;
 			children = (
+				40ADA41A20C02E0600703B4E /* dependencyInjection */,
 				E858A4501F17AA8D008AD538 /* util */,
 				E878B7071F0E27650052D1C3 /* http */,
 				E878B72B1F0E2FD90052D1C3 /* serialization */,
@@ -443,7 +465,6 @@
 				E878B6F51F0E25BF0052D1C3 /* Frameworks */,
 				E878B6F61F0E25BF0052D1C3 /* Headers */,
 				E878B6F71F0E25BF0052D1C3 /* Resources */,
-				097281661B2237C945AE688A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -464,7 +485,6 @@
 				E878B7171F0E29450052D1C3 /* Frameworks */,
 				E878B7181F0E29450052D1C3 /* Resources */,
 				2EFC2804AF750641B14D6E42 /* [CP] Embed Pods Frameworks */,
-				E4D336F2C473ED72BA0479AF /* [CP] Copy Pods Resources */,
 				CAD5E2361F4C5BDC000B4DCE /* Trema */,
 				E8376A161F55DA4F002F0339 /* CopyFiles */,
 			);
@@ -485,7 +505,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Netcetera AG";
 				TargetAttributes = {
 					E878B6F81F0E25BF0052D1C3 = {
@@ -542,21 +562,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		097281661B2237C945AE688A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GirdersSwift/Pods-GirdersSwift-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		2EFC2804AF750641B14D6E42 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -596,7 +601,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CAD5E2361F4C5BDC000B4DCE /* Trema */ = {
@@ -612,21 +617,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}\"/GirdersSwift/src/test/packaging/trema.rb \"${SRCROOT}/GirdersSwift/src/test/resources/trema/texts.trm\" \"${CODESIGNING_FOLDER_PATH}\"";
-		};
-		E4D336F2C473ED72BA0479AF /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UnitTest/Pods-UnitTest-resources.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		E8B0B48A1F34A20700B87353 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -669,7 +659,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -692,6 +682,7 @@
 				E81F717920B61354001B9B24 /* HTTPPromise.swift in Sources */,
 				E84F811A204D76A50028E29D /* Errors.swift in Sources */,
 				E878B72F1F0E2FF30052D1C3 /* Serializable.swift in Sources */,
+				40ADA41C20C02E1C00703B4E /* Container.swift in Sources */,
 				E81F717420B5FF49001B9B24 /* KeychainStorage.swift in Sources */,
 				E83CEAA01F387D470030C6B8 /* ConfigUtil.swift in Sources */,
 				E8B4518B1F30C07E00DC14B8 /* Log.swift in Sources */,
@@ -718,6 +709,7 @@
 				CA7566431F61410F00177734 /* TestConfiguration.swift in Sources */,
 				CAEBA3221F447CC1003C9193 /* TestHTTPUtil.swift in Sources */,
 				CA3F78771F5EE674007F52EF /* TestHttpClient.swift in Sources */,
+				40ADA41F20C0333B00703B4E /* TestContainer.swift in Sources */,
 				CA74F82E1F4ECF5B00B1318F /* TestEndpoint.swift in Sources */,
 				CA3935641F45B52B0075C2F1 /* TestDateStringUtils.swift in Sources */,
 				CA1C227F1F55565F00229381 /* TestRequest.swift in Sources */,
@@ -756,6 +748,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -763,6 +756,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -817,6 +811,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -824,6 +819,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1011,6 +1007,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1018,6 +1015,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

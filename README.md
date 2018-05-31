@@ -320,6 +320,73 @@ struct Texts {
 
 There are utils for converting Date to String and vice versa. Converting to and parsing dates from RFC822 and RFC3339 are supported.
 
+### Dependency Injection ###
+
+Girders Swift contains an Inversion of Control container that can facilitate the process of Dependency Injection. Using dependency injection improves testability, makes the components more loosly coupled and makes it easy to switch implementations.
+
+In order to implement dependency injection, every "service" that needs to be injected, should be first defined as a protocol (a contract) that the other classes will consume. For example:
+
+```swift
+protocol SomeServiceProtocol {
+    func someMethod() -> String
+}
+```
+
+The implementation class would look something like this:
+
+```swift
+class SomeService: SomeServiceProtocol {
+    func someMethod() -> String {
+        return UUID().uuidString
+    }
+}
+```
+
+Instances of **SomeService** can be created every time they are needed, or they can be created only once (aka using the Singleton pattern).
+
+In order to use the Singleton pattern the protocol and the factory method need to be registered in the **Container** like so:
+
+```swift
+Container.addSingleton { () -> SomeServiceProtocol in
+    return SomeService()
+}
+```
+
+If a new instance should be created every time, use:
+
+```swift
+Container.addPerRequest { () -> SomeServiceProtocol in
+    return SomeService()
+}
+```
+
+In order to resolve the an instance of some protocol use the **resolve** method.
+
+```swift
+let resolvedInstance: SomeServiceProtocol = Container.resolve()
+```
+
+In reality there can be "services" that are use methods from other services. To resolve the dependencies, lazy properties should be used:
+
+```swift
+class SomeOtherService {
+    lazy var someService: SomeServiceProtocol = Container.resolve()
+
+    func otherServiceMethod() {
+        ...
+        let someValue = someService.someMethod()
+        ...
+    }
+}
+```
+
+Now the implementation of SomeServiceProtocol can be switched at any time. The developer can even register mock implementations when writing unit tests.
+With this approach you can create interconnected services, service cascades, etc. You can use this also to inject services in your Views or ViewControllers.
+
+**NOTE: Although this Container allows you to create circular references, that doesn't mean that you should. Be aware of creating circular references and introducing memory leaks to your applications.**
+
+The registrations of protocols and factory methods should be done in the application's AppDelegate.
+
 ### Areas for improvement ###
 
 - Add more unit tests
@@ -330,3 +397,4 @@ There are utils for converting Date to String and vice versa. Converting to and 
 - Add XML support
 - Add a persistence layer
 - And a lot more.
+
