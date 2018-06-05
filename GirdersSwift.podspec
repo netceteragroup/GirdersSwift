@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.author   = 'Netcetera'
   s.description = 'A library that reduces development time for iOS Swift applications.'
   s.platform = :ios, '9.0'
-  s.source = { :git => 'https://github.com/netceteragroup/GirdersSwift.git', :tag => '0.2.2' }
+  s.source = { :git => 'https://github.com/netceteragroup/GirdersSwift.git', :tag => '0.2.3' }
   s.requires_arc = true
   s.swift_version = "4.1"
   s.module_name = 'GirdersSwift'
