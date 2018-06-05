@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'GirdersSwift'
-  s.version = '0.2.2'
+  s.version = '0.2.3'
   s.summary  = 'Girders for iOS, written in Swift.'
   s.homepage = 'http://www.netcetera.com'
   s.author   = 'Netcetera'
@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
               } }
 
 
-  s.source_files = 'GirdersSwift/src/main/**/*.{swift}', 'GirdersSwift/CommonCrypto.h'
+  s.source_files = 'GirdersSwift/src/main/**/*.{swift}'
   s.dependency 'SwiftyBeaver', '1.5.2'
   s.dependency 'KeychainAccess', '3.1.1'
   s.dependency 'PromiseKit', '6.2.7'
