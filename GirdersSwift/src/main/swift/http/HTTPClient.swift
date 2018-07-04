@@ -99,16 +99,16 @@ extension HTTPClient: HTTP {
         -> Result<Response<T>, Error?> {
         var result: Result<Response<T>, Error?> = Result.Failure(nil)
         if let httpResponse = urlResponse as? HTTPURLResponse {
+            let bodyObject: T? = self.parseBody(data: data as Data?)
+            let response: Response<T> = Response(statusCode: httpResponse.statusCode,
+                                                 body: data as Data?,
+                                                 bodyObject: bodyObject,
+                                                 responseHeaders: httpResponse.allHeaderFields,
+                                                 url: httpResponse.url)
             if (httpResponse.statusCode / 100) == 2 {
-                let bodyObject: T? = self.parseBody(data: data as Data?)
-                let response: Response<T> = Response(statusCode: httpResponse.statusCode,
-                                                     body: data as Data?,
-                                                     bodyObject: bodyObject,
-                                                     responseHeaders: httpResponse.allHeaderFields,
-                                                     url: httpResponse.url)
                 result = Result.Success(response)
             } else {
-                let responseError = ResponseError.error(fromResponse: httpResponse)
+                let responseError = ResponseError<T>.error(fromResponse: response)
                 result = Result.Failure(responseError)
             }
         } else {
