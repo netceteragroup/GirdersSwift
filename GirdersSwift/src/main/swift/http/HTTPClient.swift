@@ -32,6 +32,10 @@ public class HTTPClient {
         sessionDelegate.httpClient = self
     }
     
+    deinit {
+        self.urlSession.finishTasksAndInvalidate()
+    }
+    
     /// Extracts the credentials for a given url request.
     ///
     /// - Parameter request: The given url request.
