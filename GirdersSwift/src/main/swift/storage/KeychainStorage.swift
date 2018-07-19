@@ -4,7 +4,7 @@ import KeychainAccess
 
 public class KeychainStorage: SecureStorage {
     
-    static let shared = KeychainStorage()
+    public static let shared = KeychainStorage()
     private let keychain = Keychain(service: Bundle.main.bundleIdentifier!)
     
     public func save(string: String?, forKey key: String) {
