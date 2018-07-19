@@ -2,7 +2,7 @@
 import Foundation
 import KeychainAccess
 
-class KeychainStorage: SecureStorage {
+public class KeychainStorage: SecureStorage {
     
     static let shared = KeychainStorage()
     private let keychain = Keychain(service: Bundle.main.bundleIdentifier!)
