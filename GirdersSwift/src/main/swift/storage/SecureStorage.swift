@@ -2,7 +2,7 @@
 import Foundation
 
 /// Protocol that defines methods for secure storing of items.
-protocol SecureStorage {
+public protocol SecureStorage {
     /// Saves the provided string under the provided key.
     func save(string: String?, forKey key: String)
     /// Removes the string under the provided key.

@@ -7,19 +7,19 @@ public class KeychainStorage: SecureStorage {
     static let shared = KeychainStorage()
     private let keychain = Keychain(service: Bundle.main.bundleIdentifier!)
     
-    func save(string: String?, forKey key: String) {
+    public func save(string: String?, forKey key: String) {
         keychain[key] = string
     }
     
-    func removeString(forKey key: String) {
+    public func removeString(forKey key: String) {
         keychain[key] = nil
     }
     
-    func string(forKey key: String) -> String? {
+    public func string(forKey key: String) -> String? {
         return keychain[key]
     }
     
-    func save(value: Data?, key: String) {
+    public func save(value: Data?, key: String) {
         guard let value = value else {
             return
         }
@@ -30,7 +30,7 @@ public class KeychainStorage: SecureStorage {
         }
     }
     
-    func removeData(forKey key: String) {
+    public func removeData(forKey key: String) {
         do {
             try keychain.remove(key)
         } catch {
@@ -38,7 +38,7 @@ public class KeychainStorage: SecureStorage {
         }
     }
     
-    func data(forKey key: String) -> Data? {
+    public func data(forKey key: String) -> Data? {
         do {
             let data = try keychain.getData(key)
             return data
@@ -48,7 +48,7 @@ public class KeychainStorage: SecureStorage {
         }
     }
     
-    func clearSecureStorage() {
+    public func clearSecureStorage() {
         do {
             try keychain.removeAll()
         } catch {
