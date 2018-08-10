@@ -7,9 +7,9 @@ public class Configuration {
     
     public static let sharedInstance = Configuration()
     
-    let defaultConfiguration: [String : Any]?
-    let modeConfiguration: [String : Any]?
-    let serialQueue = DispatchQueue(label: "SerialQueue")
+    public let defaultConfiguration: [String : Any]?
+    public let modeConfiguration: [String : Any]?
+    public let serialQueue = DispatchQueue(label: "SerialQueue")
     
 
     public init(bundle: Bundle = Bundle.main) {
