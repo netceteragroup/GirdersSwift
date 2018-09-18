@@ -28,6 +28,19 @@ public struct Response<T> {
     
     // The url of the response.
     public let url: URL?
+
+    public init(statusCode: Int,
+                body: Data?,
+                bodyObject: T?,
+                responseHeaders: [AnyHashable : Any],
+                url: URL?) {
+        self.statusCode = statusCode
+        self.body = body
+        self.bodyObject = bodyObject
+        self.responseHeaders = responseHeaders
+        self.url = url
+    }
+    
 }
 
 /// The protocol that declares methods for http communication. 
