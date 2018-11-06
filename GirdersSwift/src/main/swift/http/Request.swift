@@ -56,7 +56,7 @@ public struct Request: Equatable {
         self.method = endpoint.method
 
         if mutableRequest.parameters != nil && mutableRequest.method != .GET {
-            mutableRequest.createJsonBodyFromParameters()
+            mutableRequest.createBodyFromParameters()
             self.body = mutableRequest.body
         } else {
             self.body = nil
@@ -95,7 +95,7 @@ public struct Request: Equatable {
                         params.urlEncodedQueryStringWithEncoding(encoding: .utf8)
                 }
             }
-            mutableRequest.createJsonBodyFromParameters()
+            mutableRequest.createBodyFromParameters()
             self.body = mutableRequest.body
         } else {
             self.body = nil
@@ -161,7 +161,7 @@ public struct MutableRequest : RequestGenerator {
         self.headerFields += headerFields
     }
     
-    public mutating func createJsonBodyFromParameters() {
+    public mutating func createBodyFromParameters() {
         do {
             if let dictionary = self.parameters as? [String : Any] {
                 self.body = try JSONSerialization.data(withJSONObject: dictionary,
@@ -173,6 +173,8 @@ public struct MutableRequest : RequestGenerator {
                                                        options: .prettyPrinted)
             } else if let string = self.parameters as? String {
                 self.body = string.data(using: .utf8, allowLossyConversion: true)!
+            } else if let data = self.parameters as? Data {
+                self.body = data
             }
 
             if let bodyToUse = self.body {
