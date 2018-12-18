@@ -40,7 +40,6 @@
 		CA7DAA051F866D140087BEA5 /* Configuration-env.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA7DAA041F866D140087BEA5 /* Configuration-env.plist */; };
 		CAD5E2381F4C5DCD000B4DCE /* TestUtilURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD5E2371F4C5DCD000B4DCE /* TestUtilURL.swift */; };
 		CAD5E23A1F4C5DDA000B4DCE /* TestUtilString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD5E2391F4C5DDA000B4DCE /* TestUtilString.swift */; };
-		CAD5E23C1F4C5DEB000B4DCE /* TestUtilDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD5E23B1F4C5DEB000B4DCE /* TestUtilDictionary.swift */; };
 		CAEBA3201F4477A2003C9193 /* TestRequestGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEBA31F1F4477A2003C9193 /* TestRequestGenerator.swift */; };
 		CAEBA3221F447CC1003C9193 /* TestHTTPUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEBA3211F447CC1003C9193 /* TestHTTPUtil.swift */; };
 		E81F717220B5FEF5001B9B24 /* SecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81F717120B5FEF5001B9B24 /* SecureStorage.swift */; };
@@ -129,7 +128,6 @@
 		CA7DAA041F866D140087BEA5 /* Configuration-env.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Configuration-env.plist"; sourceTree = "<group>"; };
 		CAD5E2371F4C5DCD000B4DCE /* TestUtilURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtilURL.swift; sourceTree = "<group>"; };
 		CAD5E2391F4C5DDA000B4DCE /* TestUtilString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtilString.swift; sourceTree = "<group>"; };
-		CAD5E23B1F4C5DEB000B4DCE /* TestUtilDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtilDictionary.swift; sourceTree = "<group>"; };
 		CAEBA31F1F4477A2003C9193 /* TestRequestGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRequestGenerator.swift; sourceTree = "<group>"; };
 		CAEBA3211F447CC1003C9193 /* TestHTTPUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHTTPUtil.swift; sourceTree = "<group>"; };
 		D3C42DCD874731A80E7D079E /* Pods-GirdersSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GirdersSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-GirdersSwift/Pods-GirdersSwift.release.xcconfig"; sourceTree = "<group>"; };
@@ -286,7 +284,6 @@
 				CAEBA3211F447CC1003C9193 /* TestHTTPUtil.swift */,
 				CAD5E2371F4C5DCD000B4DCE /* TestUtilURL.swift */,
 				CAD5E2391F4C5DDA000B4DCE /* TestUtilString.swift */,
-				CAD5E23B1F4C5DEB000B4DCE /* TestUtilDictionary.swift */,
 				CA74F82D1F4ECF5B00B1318F /* TestEndpoint.swift */,
 				CA1C227E1F55565F00229381 /* TestRequest.swift */,
 				CA3F78761F5EE674007F52EF /* TestHttpClient.swift */,
@@ -732,7 +729,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAD5E23C1F4C5DEB000B4DCE /* TestUtilDictionary.swift in Sources */,
 				CAD5E23A1F4C5DDA000B4DCE /* TestUtilString.swift in Sources */,
 				CAD5E2381F4C5DCD000B4DCE /* TestUtilURL.swift in Sources */,
 				CA19213D1F5567C6002615ED /* TestSerialization.swift in Sources */,

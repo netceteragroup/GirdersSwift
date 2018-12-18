@@ -56,4 +56,53 @@ public class KeychainStorage: SecureStorage {
         }
     }
     
+    //MARK: - biometric protection
+    public func saveWithBiometricProtection(string: String?,
+                                            forKey key: String,
+                                            accessibility: Accessibility,
+                                            authenticationPolicy: AuthenticationPolicy) {
+        guard let string = string else {
+            do {
+                try keychain.remove(key)
+            } catch {
+                Log.error("Error removing keychain items")
+            }
+            return
+        }
+        DispatchQueue.global().async { [unowned self] in
+            do {
+                try self.keychain
+                    .accessibility(accessibility, authenticationPolicy: authenticationPolicy)
+                    .set(string, key: key)
+            } catch {
+                Log.error("Error saving value")
+            }
+        }
+    }
+    
+    public func saveWithBiometricProtection(string: String?, forKey key: String) {
+        self.saveWithBiometricProtection(string: string,
+                                         forKey: key,
+                                         accessibility: .whenPasscodeSetThisDeviceOnly,
+                                         authenticationPolicy: .userPresence)
+    }
+    
+    public func biometricProtectedString(forKey key: String,
+                                         withPrompt prompt: String,
+                                         result: @escaping (String?) -> Void) {
+        DispatchQueue.global().async { [unowned self] in
+            do {
+                let value = try self.keychain.authenticationPrompt(prompt).get(key)
+                DispatchQueue.main.async {
+                    result(value)
+                }
+            } catch {
+                Log.error("Error retrieving the protected value")
+                DispatchQueue.main.async {
+                    result(nil)
+                }
+            }
+        }
+    }
+    
 }
