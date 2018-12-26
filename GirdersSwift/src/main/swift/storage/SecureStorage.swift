@@ -23,4 +23,11 @@ public protocol SecureStorage {
     func biometricProtectedString(forKey key: String,
                                   withPrompt prompt: String,
                                   result: @escaping (String?) -> Void)
+    /// Saves data with biometric protection.
+    func saveWithBiometricProtection(data: Data?,
+                                     forKey key: String)
+    /// Retrieves data saved with biometric protection.
+    func biometricProtectedData(forKey key: String,
+                                withPrompt prompt: String,
+                                result: @escaping (Data?) -> Void)
 }
