@@ -41,7 +41,10 @@ public struct Request: Equatable {
         mutableRequest.updateParameters(parameters: endpoint.parameters)
         mutableRequest.updateQueryParameters(parameters: endpoint.queryParameters)
         self.parameters = mutableRequest.parameters
-        let path = endpoint.baseURL.appendingPathComponent(endpoint.path)
+        var path = endpoint.baseURL
+        if !endpoint.path.isEmpty {
+            path = path.appendingPathComponent(endpoint.path)
+        }
 
         if mutableRequest.queryString != nil {
             if let queryString = path.appendQueryString(queryString: mutableRequest.queryString!) {
