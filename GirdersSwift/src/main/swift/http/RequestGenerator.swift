@@ -42,16 +42,15 @@ public protocol RequestGenerator {
 
 /// Default implementation of the RequestGenerator.
 public extension RequestGenerator {
-
-    public func configuration() -> Configuration {
+    func configuration() -> Configuration {
         return Configuration.sharedInstance
     }
 
-    public func request(withMethod method: HTTPMethod) -> MutableRequest {
+    func request(withMethod method: HTTPMethod) -> MutableRequest {
         return MutableRequest(method: method)
     }
 
-    public func withBasicAuth(request: MutableRequest) -> MutableRequest {
+    func withBasicAuth(request: MutableRequest) -> MutableRequest {
         var request = request
         let username = configuration()[Constants.AuthUsername] as? String
         let password = configuration()[Constants.AuthPassword] as? String
@@ -69,7 +68,7 @@ public extension RequestGenerator {
         return request
     }
 
-    public func withJsonSupport(request: MutableRequest) -> MutableRequest {
+    func withJsonSupport(request: MutableRequest) -> MutableRequest {
         var request = request
         let jsonHeader = [Constants.Accept : Constants.JSONHeader]
         request.updateHTTPHeaderFields(headerFields: jsonHeader)
@@ -89,7 +88,7 @@ public extension RequestGenerator {
         return request
     }
     
-    public func withSessionCookie(request: MutableRequest) -> MutableRequest {
+    func withSessionCookie(request: MutableRequest) -> MutableRequest {
         var request = request
         
         guard let cookies = HTTPCookieStorage.shared.cookies else {
@@ -117,7 +116,7 @@ public extension RequestGenerator {
         return request
     }
     
-    public func generateRequest(withMethod method: HTTPMethod) -> MutableRequest {
+    func generateRequest(withMethod method: HTTPMethod) -> MutableRequest {
         return request(withMethod: method) |> withJsonSupport
     }
 
