@@ -5,14 +5,14 @@ source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
 target :GirdersSwift do
-  pod 'SwiftyBeaver'
-  pod 'PromiseKit'
-  pod 'KeychainAccess'
+  pod 'SwiftyBeaver', '1.7.0'
+  pod 'PromiseKit', '6.8.3'
+  pod 'KeychainAccess', '3.2.0'
 end
 
 target :UnitTest do
-  pod 'SwiftyBeaver'
-  pod 'OHHTTPStubs/Swift'
+  pod 'SwiftyBeaver', '1.7.0'
+  pod 'OHHTTPStubs/Swift', '7.0.0'
 end
 
 post_install do |installer|
