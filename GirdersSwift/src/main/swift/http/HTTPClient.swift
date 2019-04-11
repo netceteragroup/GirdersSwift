@@ -94,7 +94,7 @@ extension HTTPClient: HTTP {
     }
     
     private func removeFromPool(request: Request) {
-        if let index = self.requestsPool.index(of: request)  {
+        if let index = self.requestsPool.firstIndex(of: request)  {
             self.requestsPool.remove(at: index)
         }
     }

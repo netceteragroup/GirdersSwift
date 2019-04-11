@@ -67,7 +67,6 @@
 		E878B72F1F0E2FF30052D1C3 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E878B72D1F0E2FD90052D1C3 /* Serializable.swift */; };
 		E8A635BC2024A73300A3021E /* ResponseHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A635BB2024A73300A3021E /* ResponseHandlers.swift */; };
 		E8A72DBB1F445AD200BAD955 /* DateStringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A72DBA1F445AD200BAD955 /* DateStringUtils.swift */; };
-		E8AD45501F34B51200B9F293 /* GirdersSwift-Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = E8AD454F1F34B4F300B9F293 /* GirdersSwift-Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E8B451891F30C06100DC14B8 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B451881F30C06100DC14B8 /* SwiftyBeaver.framework */; };
 		E8B4518B1F30C07E00DC14B8 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B4518A1F30C07E00DC14B8 /* Log.swift */; };
 		E8BEE0031F4AED0F0070BBF5 /* GRSecurity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8BEE0021F4AED0F0070BBF5 /* GRSecurity.framework */; };
@@ -446,7 +445,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8E875A61F34A2D6007F4715 /* GirdersSwift.h in Headers */,
-				E8AD45501F34B51200B9F293 /* GirdersSwift-Swift.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,7 +460,6 @@
 				E878B6F51F0E25BF0052D1C3 /* Frameworks */,
 				E878B6F61F0E25BF0052D1C3 /* Headers */,
 				E878B6F71F0E25BF0052D1C3 /* Resources */,
-				1075B9B473A4687030ADFDB4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -485,7 +482,6 @@
 				2EFC2804AF750641B14D6E42 /* [CP] Embed Pods Frameworks */,
 				CAD5E2361F4C5BDC000B4DCE /* Trema */,
 				E8376A161F55DA4F002F0339 /* CopyFiles */,
-				39BD0F204E9BBE21728543A6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -561,21 +557,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1075B9B473A4687030ADFDB4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GirdersSwift/Pods-GirdersSwift-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		2EFC2804AF750641B14D6E42 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -598,21 +579,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UnitTest/Pods-UnitTest-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		39BD0F204E9BBE21728543A6 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UnitTest/Pods-UnitTest-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A49AE46EDA3D9093EE960583 /* [CP] Check Pods Manifest.lock */ = {
@@ -896,7 +862,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/frameworks",
 					"$(PROJECT_DIR)/framework",
 				);
 				HEADER_SEARCH_PATHS = (
@@ -911,10 +876,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USE_HEADERMAP = YES;
 			};
@@ -936,7 +900,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/frameworks",
 					"$(PROJECT_DIR)/framework",
 				);
 				HEADER_SEARCH_PATHS = (
@@ -950,9 +913,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.netcetera.GirdersSwift;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USE_HEADERMAP = YES;
 			};
@@ -977,7 +939,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -999,7 +961,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.netcetera.UnitTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1099,7 +1061,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/frameworks",
 					"$(PROJECT_DIR)/framework",
 				);
 				HEADER_SEARCH_PATHS = (
@@ -1114,10 +1075,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USE_HEADERMAP = YES;
 			};
@@ -1142,7 +1102,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Coverage;
