@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.platform = :ios, '9.0'
   s.source = { :git => 'https://github.com/netceteragroup/GirdersSwift.git', :tag => '0.4.2' }
   s.requires_arc = true
-  s.swift_version = "5.0"
+  s.swift_version = "4.2"
   s.module_name = 'GirdersSwift'
   s.xcconfig = { 'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/GirdersSwift',
                  'SWIFT_ACTIVE_COMPILATION_CONDITIONS[config=Debug]' => 'DEBUG' }
