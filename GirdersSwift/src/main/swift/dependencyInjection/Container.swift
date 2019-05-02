@@ -7,6 +7,7 @@ enum ObjectLifetime {
     case PerRequest
 }
 
+import Foundation
 
 /// Inversion of control container that can be used for resolving dependencies.
 public class Container {
@@ -76,6 +77,35 @@ public class Container {
             return result
         } else {
             fatalError("Registration not found")
+        }
+    }
+    
+    /// Resolves a dependency of a specific type. Throws an error if dependency is not found.
+    ///
+    /// - Returns: Resolved intance that either is a instance of the class or conforms to a specific protocol.
+    public static func resolveOrThrow<T>() throws -> T {
+        let parameterType = type(of:T.self)
+        let key = String(describing:parameterType)
+        
+        if let factory = factories[key] as? () -> T,
+            let lifetime = lifetimes[key] {
+            
+            let result: T
+            
+            if (lifetime == .PerRequest) {
+                result = factory()
+            } else if let singleton = singletonObjects[key] as? T {
+                result = singleton
+            } else {
+                result = factory()
+                singletonObjects[key] = result
+            }
+            
+            return result
+        } else {
+            throw NSError(domain: "com.netcetera.GirdersSwift",
+                          code: 02,
+                          userInfo: ["Registration not found" : key])
         }
     }
     
