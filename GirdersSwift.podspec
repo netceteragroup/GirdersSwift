@@ -24,9 +24,9 @@ Pod::Spec.new do |s|
 
 
   s.source_files = 'GirdersSwift/src/main/**/*.{swift}'
-  s.dependency 'SwiftyBeaver', '1.5.2'
-  s.dependency 'KeychainAccess', '3.1.1'
-  s.dependency 'PromiseKit', '6.4.0'
+  s.dependency 'SwiftyBeaver', '1.7.0'
+  s.dependency 'KeychainAccess', '3.2.0'
+  s.dependency 'PromiseKit', '6.8.3'
   s.frameworks = 'Foundation', 'Security'
   s.vendored_frameworks = 'framework/GRSecurity.framework'
 
