@@ -1,14 +1,14 @@
 Pod::Spec.new do |s|
   s.name     = 'GirdersSwift'
-  s.version = '0.4.4'
+  s.version = '0.4.5'
   s.summary  = 'Girders for iOS, written in Swift.'
   s.homepage = 'http://www.netcetera.com'
   s.author   = 'Netcetera'
   s.description = 'A library that reduces development time for iOS Swift applications.'
   s.platform = :ios, '9.0'
-  s.source = { :git => 'https://github.com/netceteragroup/GirdersSwift.git', :tag => '0.4.4' }
+  s.source = { :git => 'https://github.com/netceteragroup/GirdersSwift.git', :tag => '0.4.5' }
   s.requires_arc = true
-  s.swift_version = "4.2"
+  s.swift_version = "5.0"
   s.module_name = 'GirdersSwift'
   s.xcconfig = { 'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/GirdersSwift',
                  'SWIFT_ACTIVE_COMPILATION_CONDITIONS[config=Debug]' => 'DEBUG' }
