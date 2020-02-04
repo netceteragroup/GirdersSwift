@@ -110,3 +110,11 @@ extension Dictionary {
     }
     
 }
+
+extension NSError {
+    
+    static let unknown = NSError(domain: "com.netcetera.GirdersSwift",
+                                 code: 123,
+                                 userInfo: nil)
+    
+}

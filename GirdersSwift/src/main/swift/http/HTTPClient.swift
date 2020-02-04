@@ -1,5 +1,8 @@
 import Foundation
 import GRSecurity
+#if canImport(Combine)
+import Combine
+#endif
 
 /// NSURLSession implementation of the HTTP protocol.
 ///
@@ -10,7 +13,8 @@ import GRSecurity
 ///
 /// You can also use async requests with completion handler.
 public class HTTPClient {
-
+    
+    fileprivate var cancelables = [Any]()
     fileprivate var responseHandlers: [ResponseHandler]
     fileprivate let sessionDelegate: DefaultSessionDelegate = DefaultSessionDelegate()
     fileprivate let urlSession: URLSession
@@ -33,6 +37,7 @@ public class HTTPClient {
     }
     
     deinit {
+        cancelables.removeAll()
         self.urlSession.finishTasksAndInvalidate()
     }
     
@@ -142,6 +147,82 @@ extension HTTPClient: HTTP {
 
         return nil
     }
+    
+}
+
+/// Combine extensions.
+extension HTTPClient {
+    
+    @available(iOS 13, *)
+    public func executeRequest<T>(request: Request) -> AnyPublisher<T, Error> where T: Decodable {
+        let urlRequest: URLRequest = URLRequest(request: request)
+        requestsPool.append(request)
+        let publisher: AnyPublisher<T, Error> = urlSession.dataTaskPublisher(for: urlRequest)
+            .mapError({ (error) -> Error in
+                ResponseError<URLError>.error(from: error)
+            })
+            .flatMap(maxPublishers: .max(1)) { [unowned self] pair in
+                self.decode(pair.data)
+            }
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
+        
+        let cancelable = publisher.sink(receiveCompletion: { [weak self] (completion) in
+            self?.removeFromPool(request: request)
+        }) { (value) in
+            Log.debug("Received value for request with url: \(request.url.absoluteString)")
+        }
+        
+        cancelables.append(cancelable)
+                
+        return publisher
+    }
+    
+    @available (iOS 13, *)
+    public func executeRequest<T>(request: Request) -> Future<T, Error> where T: Decodable {
+        return Future<T, Error> { [unowned self] promise in
+            let urlRequest: URLRequest = URLRequest(request: request)
+            self.requestsPool.append(request)
+            self.urlSession.dataTask(with: urlRequest) { [unowned self] (data, urlResponse, error) in
+                self.removeFromPool(request: request)
+                
+                if let error = error {
+                    promise(.failure(error))
+                    return
+                }
+                if let data = data {
+                    do {
+                        let model = try JSONDecoder().decode(T.self, from: data)
+                        promise(.success(model))
+                    } catch let err {
+                        promise(.failure(err))
+                    }
+                    return
+                }
+                
+                if let httpResponse = urlResponse as? HTTPURLResponse {
+                    let response: Response<T> = Response(statusCode: httpResponse.statusCode,
+                                                         body: data as Data?,
+                                                         bodyObject: nil,
+                                                         responseHeaders: httpResponse.allHeaderFields,
+                                                         url: httpResponse.url)
+                    let responseError = ResponseError<T>.error(fromResponse: response)
+                    promise(.failure(responseError))
+                    return
+                }
+                
+                promise(.failure(NSError.unknown))
+            }.resume()
+        }
+    }
+    
+    @available(iOS 13, *)
+    private func decode<T: Decodable>(_ data: Data) -> AnyPublisher<T, Error> {
+        return Just(data)
+            .decode(type: T.self, decoder: JSONDecoder())
+            .eraseToAnyPublisher()
+    }
+    
 }
 
 /// Extension of the NSURLSession that blocks the data task with semaphore, so we can perform

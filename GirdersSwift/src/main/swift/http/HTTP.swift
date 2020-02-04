@@ -1,4 +1,7 @@
 import Foundation
+#if canImport(Combine)
+import Combine
+#endif
 
 /// Enumeration representing result from http request.
 /// The successfull result can be any type (Response, Image, etc).
@@ -72,4 +75,18 @@ public protocol HTTP {
     /// - Parameter completionHandler: completion handler with the result of the request.
     func get<T>(url: URL,
                 completionHandler: @escaping (Result<Response<T>, Error?>) -> Void)
+    
+    /// Executes the request with the provided url, returning a Combine publisher.
+    ///
+    /// - Parameter request: The request object containing all required data.
+    /// - Returns: Publisher with the expected model as result or an error.
+    @available(iOS 13, *)
+    func executeRequest<T>(request: Request) -> AnyPublisher<T, Error> where T: Decodable
+    
+    /// Executes the request with the provided url, returning a Combine future.
+    ///
+    /// - Parameter request: The request object containing all required data.
+    /// - Returns: Future with the expected model as result or an error.
+    @available(iOS 13, *)
+    func executeRequest<T>(request: Request) -> Future<T, Error> where T: Decodable
 }
