@@ -23,7 +23,7 @@ We plan to add several new modules in the future, all build in the open. Feel fr
 
 The idea of the framework is to be as small as possible, but at the same time, as independent as possible from other frameworks. On one hand, we don't want to re-invent the wheel, when there are a lot of good frameworks for certain common tasks in iOS development. On the other, we don't want to heavily depend on third-party frameworks. That's why we are relying on protocols a lot. 
 
-This framework doesn't intend to force you on an app architecture, or async programming abstraction. You are free to choose whether you will use completionHandlers, futures/promises or RX extensions. This decision is delegated to the project.
+This framework doesn't intend to force you on an app architecture, or async programming abstraction. You are free to choose whether you will use completionHandlers, futures/promises or RX/Combine extensions. This decision is delegated to the project.
 
 One of the goals of the framework is to provide enough extension points to extend its functionalities, without changing the underlying implementation. Some form of the decorator pattern is used throughout the framework.
 
@@ -209,9 +209,33 @@ func register(withRequest request: RegisterRequest,
 }
 ```
 
+### Combine extensions ###
+
+The framework now supports Combine extensions. You can execute a network requests, which can return a Publisher or a Future. Using the Decodable protocol, the response is automatically parsed and returned as a model to the caller. 
+
+```swift
+func loadSensors() -> AnyPublisher<[Sensor], Error> {
+    let request = Request(endpoint: PulseEndpoint.sensors)
+    let publisher: AnyPublisher<[SensorResponse], Error> = httpClient.executeRequest(request: request)
+    return publisher.map { (response) -> [Sensor] in
+        self.convert(sensorsResponse: response)
+    }
+    .eraseToAnyPublisher()
+}
+
+private func convert(sensorsResponse: [SensorResponse]) -> [Sensor] {
+    let sensors = sensorsResponse.map { (sensorResponse) -> Sensor in
+        return convert(sensorResponse: sensorResponse)
+    }
+    return sensors
+}
+```
+
+Example usage of the Combine extensions can be found here: https://github.com/martinmitrevski/GirdersCombineSample.
+
 ### Error handling ###
 
-You can create your own error handlers to abstract away common error handling logic. For example, let's say that your app acceses the REST API through a token that can expire. In this case, we want to try to refresh the token, by silently loging in the user. Here's how we can do this with our error handlers.
+If you are not using Combine, you can create your own error handlers to abstract away common error handling logic. For example, let's say that your app acceses the REST API through a token that can expire. In this case, we want to try to refresh the token, by silently loging in the user. Here's how we can do this with our error handlers.
 
 ```swift
 func standardErrorHandler(_ error: @escaping ErrorHandler) -> ErrorHandler {
