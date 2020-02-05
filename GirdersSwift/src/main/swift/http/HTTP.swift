@@ -76,6 +76,7 @@ public protocol HTTP {
     func get<T>(url: URL,
                 completionHandler: @escaping (Result<Response<T>, Error?>) -> Void)
     
+    #if canImport(Combine)
     /// Executes the request with the provided url, returning a Combine publisher.
     ///
     /// - Parameter request: The request object containing all required data.
@@ -89,4 +90,5 @@ public protocol HTTP {
     /// - Returns: Future with the expected model as result or an error.
     @available(iOS 13, *)
     func executeRequest<T>(request: Request) -> Future<T, Error> where T: Decodable
+    #endif
 }

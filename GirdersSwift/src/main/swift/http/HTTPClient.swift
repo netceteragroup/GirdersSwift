@@ -150,6 +150,7 @@ extension HTTPClient: HTTP {
     
 }
 
+#if canImport(Combine)
 /// Combine extensions.
 extension HTTPClient {
     
@@ -224,6 +225,7 @@ extension HTTPClient {
     }
     
 }
+#endif
 
 /// Extension of the NSURLSession that blocks the data task with semaphore, so we can perform
 /// a sync request.
