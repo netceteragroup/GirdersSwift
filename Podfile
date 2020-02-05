@@ -1,6 +1,6 @@
 platform :ios, :deployment_target => '9.0'
 
-source 'https://github.com/CocoaPods/Specs.git'
+source 'https://cdn.cocoapods.org/'
 
 use_frameworks!
 
