@@ -71,6 +71,7 @@ public class KeychainStorage: SecureStorage {
         }
         DispatchQueue.global().async { [unowned self] in
             do {
+                try? self.keychain.remove(key)
                 try self.keychain
                     .accessibility(accessibility, authenticationPolicy: authenticationPolicy)
                     .set(string, key: key)
@@ -94,6 +95,7 @@ public class KeychainStorage: SecureStorage {
         }
         DispatchQueue.global().async { [unowned self] in
             do {
+                try? self.keychain.remove(key)
                 try self.keychain
                     .accessibility(accessibility, authenticationPolicy: authenticationPolicy)
                     .set(data, key: key)
