@@ -254,6 +254,15 @@ func standardErrorHandler(_ error: @escaping ErrorHandler) -> ErrorHandler {
     return handler
 }
 ```
+#### Typesafe and easy swift localizations using trema ####
+
+A new ruby script was added to GirdersSwift that creates a swift struct with constant properties that are being read from the trema file. The script goes through the .trm file and makes properties out of the keys. Using it is very simple, the script takes  2 mandatory parameters and 1 optional parameter. The 1st parameter is the product name of your project that can be referenced by using the XCode build constant ${PRODUCT_NAME}, this parameter is neccesary since after we create the file in the needed directory, we also need to add it to the .xcodeproj. The second parameter is the path to your .trm file. The third parameter is the path where you would want the file to be created. It is a relative path to the root folder of your project. Ex. : src/main/swift/utils/Texts.swift will create a Texts.swift file in your utils directory and the struct name will be Texts. If you omit the third parameter the script will create your file at src/main/resources/trema/Texts.swift with the appropriate struct name. If your project is organised differently and you omit the third parameter or you use an absolute path to your directory instead of the relative one, the script will fail. This is a limitation that the script is facing because of the usage of the xcodeproj tool in ruby, which is mandatory for adding a file to a project. An example is shown below :
+
+```
+"${SRCROOT}"/src/main/resources/trema/textsCreator.rb "${PRODUCT_NAME}" "${SRCROOT}/src/main/resources/trema/texts.trm" "src/main/swift/util/TextUtil.swift" 
+```
+
+After running the project once, you will be able to use all the trema key by just using StructName.property, anywhere in your project. This script also takes the context from every trema entry and adds it as a comment above all of the properties, to help with documentation. 
 
 ### Third party extensions ###
 
