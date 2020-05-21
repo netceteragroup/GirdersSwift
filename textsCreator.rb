@@ -52,7 +52,8 @@ doc.elements.each("trema/text") do |e|
             outfile.puts "    // " + c.text()
         end
     end
-    outfile.puts "    static let " + e.attributes["key"] + " = " + "translate(\"" + e.attributes["key"]  + "\")"
+    camelizedName = e.attributes["key"].split('_').inject { |m, p| m + p.capitalize }
+    outfile.puts "    static let " + camelizedName + " = " + "translate(\"" + e.attributes["key"]  + "\")"
 end
 
 outfile.puts "\n}"
