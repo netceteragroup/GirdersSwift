@@ -39,7 +39,7 @@ public func plistPath(forResource resource: String, bundle: Bundle = Bundle.main
 
 /// Checks if configuration is for release.
 ///
-/// - Returns: True if not in debug mode, flase otherwise.
+/// - Returns: True if not in debug mode, false otherwise.
 public func isReleaseConfig() -> Bool {
     #if DEBUG
         return false
@@ -60,4 +60,15 @@ public func envConfigFileName() -> String? {
     }
     
     return nil
+}
+
+/// Checks if target environment is a simulator
+///
+/// - Returns: True if in simulator environment.
+public func isSimulatorEnvironment() -> Bool {
+    #if targetEnvironment(simulator)
+        return true
+    #else
+        return false
+    #endif
 }
