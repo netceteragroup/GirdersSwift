@@ -6,6 +6,11 @@ import Foundation
 //
 // In case error message from the server needs to be supported, use enum with associated values.
 public enum ResponseError<T>: Error {
+    case MovedPermanently(response: Response<T>)
+    case Found(response: Response<T>)
+    case SeeOther(response: Response<T>)
+    case NotModified(response: Response<T>)
+    case TemporaryRedirect(response: Response<T>)
     case BadRequest(response: Response<T>)
     case Unauthorized(response: Response<T>)
     case Forbidden(response: Response<T>)
@@ -19,8 +24,18 @@ public enum ResponseError<T>: Error {
 
 extension ResponseError {
     
-    public static func error(fromResponse response: Response<T>) -> ResponseError {
+    public static func error<T>(fromResponse response: Response<T>) -> ResponseError<T> {
         switch response.statusCode {
+        case 301:
+            return .MovedPermanently(response: response)
+        case 302:
+            return .Found(response: response)
+        case 303:
+            return .SeeOther(response: response)
+        case 304:
+            return .NotModified(response: response)
+        case 307:
+            return .TemporaryRedirect(response: response)
         case 400:
             return .BadRequest(response: response)
         case 401:
@@ -48,26 +63,11 @@ extension ResponseError {
                                           bodyObject: nil,
                                           responseHeaders: urlError.errorUserInfo,
                                           url: urlError.failingURL)
-        switch response.statusCode {
-        case 400:
-            return .BadRequest(response: response)
-        case 401:
-            return .Unauthorized(response: response)
-        case 403:
-            return .Forbidden(response: response)
-        case 404:
-            return .NotFound(response: response)
-        case 405:
-            return .MethodNotAllowed(response: response)
-        case 500:
-            return .InternalServerError(response: response)
-        case 501:
-            return .NotImplemented(response: response)
-        case 502:
-            return .BadGateway(response: response)
-        default:
-            return .Unknown(response: response)
-        }
+        return error(fromResponse: response)
     }
     
+    private static func error(from response: Response<URLError>) -> ResponseError<URLError> {
+        return error(fromResponse: response)
+    }
+
 }
