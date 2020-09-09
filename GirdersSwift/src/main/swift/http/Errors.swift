@@ -11,6 +11,7 @@ public enum ResponseError<T>: Error {
     case SeeOther(response: Response<T>)
     case NotModified(response: Response<T>)
     case TemporaryRedirect(response: Response<T>)
+    case PermanentRedirect(response: Response<T>)
     case BadRequest(response: Response<T>)
     case Unauthorized(response: Response<T>)
     case Forbidden(response: Response<T>)
@@ -19,6 +20,9 @@ public enum ResponseError<T>: Error {
     case InternalServerError(response: Response<T>)
     case NotImplemented(response: Response<T>)
     case BadGateway(response: Response<T>)
+    case ServiceNotAvailable(response: Response<T>)
+    case GatewayTimeout(response: Response<T>)
+    case NetworkAuthenticationRequired(response: Response<T>)
     case Unknown(response: Response<T>)
 }
 
@@ -36,6 +40,8 @@ extension ResponseError {
             return .NotModified(response: response)
         case 307:
             return .TemporaryRedirect(response: response)
+        case 308:
+            return .PermanentRedirect(response: response)
         case 400:
             return .BadRequest(response: response)
         case 401:
@@ -52,6 +58,12 @@ extension ResponseError {
             return .NotImplemented(response: response)
         case 502:
             return .BadGateway(response: response)
+        case 503:
+            return .ServiceNotAvailable(response: response)
+        case 504:
+            return .GatewayTimeout(response: response)
+        case 511:
+            return .NetworkAuthenticationRequired(response: response)
         default:
             return .Unknown(response: response)
         }
@@ -66,8 +78,4 @@ extension ResponseError {
         return error(fromResponse: response)
     }
     
-    private static func error(from response: Response<URLError>) -> ResponseError<URLError> {
-        return error(fromResponse: response)
-    }
-
 }
