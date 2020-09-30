@@ -47,6 +47,7 @@
 		E81F717620B602CE001B9B24 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81F717520B602CE001B9B24 /* Constants.swift */; };
 		E81F717920B61354001B9B24 /* HTTPPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81F717820B61354001B9B24 /* HTTPPromise.swift */; };
 		E82F15C51F4ACED100B7EC45 /* DefaultSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82F15C41F4ACED100B7EC45 /* DefaultSessionDelegate.swift */; };
+		E8368FAE252520DF00B583BC /* GRSecurity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8BEE0021F4AED0F0070BBF5 /* GRSecurity.framework */; };
 		E8376A181F55DA62002F0339 /* GRSecurity.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E8376A171F55DA62002F0339 /* GRSecurity.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E83CEAA01F387D470030C6B8 /* ConfigUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83CEA9F1F387D470030C6B8 /* ConfigUtil.swift */; };
 		E845D17920B3409500D3514D /* SSLUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E845D17820B3409500D3514D /* SSLUtil.swift */; };
@@ -69,7 +70,6 @@
 		E8A72DBB1F445AD200BAD955 /* DateStringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A72DBA1F445AD200BAD955 /* DateStringUtils.swift */; };
 		E8B451891F30C06100DC14B8 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B451881F30C06100DC14B8 /* SwiftyBeaver.framework */; };
 		E8B4518B1F30C07E00DC14B8 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B4518A1F30C07E00DC14B8 /* Log.swift */; };
-		E8BEE0031F4AED0F0070BBF5 /* GRSecurity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8BEE0021F4AED0F0070BBF5 /* GRSecurity.framework */; };
 		E8E875A61F34A2D6007F4715 /* GirdersSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = E8E875A51F34A2D6007F4715 /* GirdersSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E8EEB16A1F335D210064E3C9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8EEB1691F335D210064E3C9 /* Security.framework */; };
 /* End PBXBuildFile section */
@@ -174,7 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				911CFB302010A58100D7DEA6 /* Pods_GirdersSwift.framework in Frameworks */,
-				E8BEE0031F4AED0F0070BBF5 /* GRSecurity.framework in Frameworks */,
+				E8368FAE252520DF00B583BC /* GRSecurity.framework in Frameworks */,
 				E8EEB16A1F335D210064E3C9 /* Security.framework in Frameworks */,
 				E8B451891F30C06100DC14B8 /* SwiftyBeaver.framework in Frameworks */,
 			);
