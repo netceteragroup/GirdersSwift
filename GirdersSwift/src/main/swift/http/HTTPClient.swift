@@ -162,9 +162,55 @@ extension HTTPClient {
             .mapError({ (error) -> Error in
                 ResponseError<URLError>.error(from: error)
             })
-            .flatMap(maxPublishers: .max(1)) { [unowned self] pair in
-                self.decode(pair.data)
+            .flatMap(maxPublishers: .max(1)) { [unowned self] pair -> AnyPublisher<T, Error> in
+                guard let httpResponse = pair.response as? HTTPURLResponse else {
+                    return Future { promise in
+                        promise(.failure(NSError.unknown))
+                    }
+                    .eraseToAnyPublisher()
+                }
+                
+                if httpResponse.statusCode / 100 == 2 {
+                   return self.decode(pair.data)
+                }
+                
+                let response = Response<T>(statusCode: httpResponse.statusCode,
+                                           body: pair.data,
+                                           bodyObject: nil,
+                                           responseHeaders: httpResponse.allHeaderFields,
+                                           url: httpResponse.url)
+                
+                let responseError = ResponseError<T>.error(fromResponse: response)
+                return Future { promise in
+                    promise(.failure(responseError))
+                }
+                .eraseToAnyPublisher()
             }
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
+        
+        let cancelable = publisher.sink(receiveCompletion: { [weak self] (completion) in
+            self?.removeFromPool(request: request)
+        }) { (value) in
+            Log.debug("Received value for request with url: \(request.url.absoluteString)")
+        }
+        
+        cancelables.append(cancelable)
+                
+        return publisher
+    }
+    
+    @available(iOS 13, *)
+    public func executeDataRequest(request: Request) -> AnyPublisher<Data, Error> {
+        let urlRequest: URLRequest = URLRequest(request: request)
+        requestsPool.append(request)
+        let publisher: AnyPublisher<Data, Error> = urlSession.dataTaskPublisher(for: urlRequest)
+            .mapError({ (error) -> Error in
+                ResponseError<URLError>.error(from: error)
+            })
+            .flatMap(maxPublishers: .max(1), { pair  in
+                return self.dataPublisher(pair.data)
+            })
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
         
@@ -222,6 +268,14 @@ extension HTTPClient {
         return Just(data)
             .decode(type: T.self, decoder: JSONDecoder())
             .eraseToAnyPublisher()
+    }
+    
+    @available(iOS 13, *)
+    private func dataPublisher(_ data: Data) -> AnyPublisher<Data, Error> {
+        return Future { promise in
+            return promise(.success(data))
+        }
+        .eraseToAnyPublisher()
     }
     
 }

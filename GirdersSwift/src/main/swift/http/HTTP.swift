@@ -84,6 +84,9 @@ public protocol HTTP {
     @available(iOS 13, *)
     func executeRequest<T>(request: Request) -> AnyPublisher<T, Error> where T: Decodable
     
+    @available(iOS 13, *)
+    func executeDataRequest(request: Request) -> AnyPublisher<Data, Error>
+    
     /// Executes the request with the provided url, returning a Combine future.
     ///
     /// - Parameter request: The request object containing all required data.
