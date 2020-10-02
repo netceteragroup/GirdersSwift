@@ -7,12 +7,12 @@ use_frameworks!
 target :GirdersSwift do
   pod 'SwiftyBeaver', '~> 1.7'
   pod 'PromiseKit', '~> 6.8'
-  pod 'KeychainAccess', '~> 3.2'
+  pod 'KeychainAccess', '~> 4.2'
 end
 
 target :UnitTest do
   pod 'SwiftyBeaver', '~> 1.7'
-  pod 'OHHTTPStubs/Swift', '~> 7.0'
+  pod 'OHHTTPStubs/Swift', '~> 9.0'
 end
 
 post_install do |installer|
