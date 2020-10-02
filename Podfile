@@ -12,7 +12,7 @@ end
 
 target :UnitTest do
   pod 'SwiftyBeaver', '~> 1.7.0'
-  pod 'OHHTTPStubs/Swift', '~> 7.0.0'
+  pod 'OHHTTPStubs/Swift', '~> 9.0.0'
 end
 
 post_install do |installer|
