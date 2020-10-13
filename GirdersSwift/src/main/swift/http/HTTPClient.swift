@@ -241,10 +241,10 @@ extension HTTPClient {
                     do {
                         let model = try JSONDecoder().decode(T.self, from: data)
                         promise(.success(model))
-                    } catch let err {
-                        promise(.failure(err))
+                        return
+                    } catch {
+                        Log.debug("Error parsing the response")
                     }
-                    return
                 }
                 
                 if let httpResponse = urlResponse as? HTTPURLResponse {
