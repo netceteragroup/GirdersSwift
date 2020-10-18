@@ -226,6 +226,40 @@ extension HTTPClient {
     }
     
     @available (iOS 13, *)
+    public func executeDataRequest(request: Request) -> Future<Data, Error> {
+        return Future<Data, Error> { [unowned self] promise in
+            let urlRequest: URLRequest = URLRequest(request: request)
+            self.requestsPool.append(request)
+            self.urlSession.dataTask(with: urlRequest) { [unowned self] (data, urlResponse, error) in
+                self.removeFromPool(request: request)
+                
+                if let error = error {
+                    promise(.failure(error))
+                    return
+                }
+                if let data = data {
+                    promise(.success(data))
+                }
+                
+                if let httpResponse = urlResponse as? HTTPURLResponse {
+                    let response: Response<Data> = Response(statusCode: httpResponse.statusCode,
+                                                         body: data as Data?,
+                                                         bodyObject: nil,
+                                                         responseHeaders: httpResponse.allHeaderFields,
+                                                         url: httpResponse.url)
+                    let responseError = ResponseError<Data>.error(fromResponse: response)
+                    promise(.failure(responseError))
+                    return
+                }
+                
+                promise(.failure(NSError.unknown))
+            }
+            .resume()
+        }
+        
+    }
+    
+    @available (iOS 13, *)
     public func executeRequest<T>(request: Request) -> Future<T, Error> where T: Decodable {
         return Future<T, Error> { [unowned self] promise in
             let urlRequest: URLRequest = URLRequest(request: request)
