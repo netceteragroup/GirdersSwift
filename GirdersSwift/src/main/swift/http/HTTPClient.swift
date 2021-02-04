@@ -37,6 +37,13 @@ public class HTTPClient {
     }
     
     deinit {
+        if #available(iOS 13, *) {
+            for cancelable in self.cancelables {
+                if let cancelable = cancelable as? AnyCancellable {
+                    cancelable.cancel()
+                }
+            }
+        }
         cancelables.removeAll()
         self.urlSession.finishTasksAndInvalidate()
     }
@@ -230,8 +237,8 @@ extension HTTPClient {
         return Future<Data, Error> { [unowned self] promise in
             let urlRequest: URLRequest = URLRequest(request: request)
             self.requestsPool.append(request)
-            self.urlSession.dataTask(with: urlRequest) { [unowned self] (data, urlResponse, error) in
-                self.removeFromPool(request: request)
+            self.urlSession.dataTask(with: urlRequest) { [weak self] (data, urlResponse, error) in
+                self?.removeFromPool(request: request)
                 
                 if let error = error {
                     promise(.failure(error))
@@ -264,8 +271,8 @@ extension HTTPClient {
         return Future<T, Error> { [unowned self] promise in
             let urlRequest: URLRequest = URLRequest(request: request)
             self.requestsPool.append(request)
-            self.urlSession.dataTask(with: urlRequest) { [unowned self] (data, urlResponse, error) in
-                self.removeFromPool(request: request)
+            self.urlSession.dataTask(with: urlRequest) { [weak self] (data, urlResponse, error) in
+                self?.removeFromPool(request: request)
                 
                 if let error = error {
                     promise(.failure(error))
