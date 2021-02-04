@@ -37,13 +37,6 @@ public class HTTPClient {
     }
     
     deinit {
-        if #available(iOS 13, *) {
-            for cancelable in self.cancelables {
-                if let cancelable = cancelable as? AnyCancellable {
-                    cancelable.cancel()
-                }
-            }
-        }
         cancelables.removeAll()
         self.urlSession.finishTasksAndInvalidate()
     }
