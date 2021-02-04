@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   s.name     = 'GirdersSwift'
   s.version = '0.5.7'
   s.summary  = 'Girders for iOS, written in Swift.'
-  s.homepage = 'http://www.netcetera.com'
+  s.homepage = 'https://www.netcetera.com'
   s.author   = 'Netcetera'
   s.description = 'A library that reduces development time for iOS Swift applications.'
   s.platform = :ios, '9.0'
