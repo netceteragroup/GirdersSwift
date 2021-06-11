@@ -18,7 +18,16 @@ public class HTTPClient {
     fileprivate var responseHandlers: [ResponseHandler]
     fileprivate let sessionDelegate: DefaultSessionDelegate = DefaultSessionDelegate()
     fileprivate let urlSession: URLSession
-    fileprivate var requestsPool: [Request] = [Request]()
+    fileprivate var requestsPool: [Request] = [Request]() {
+        willSet {
+            lock.wait()
+        }
+        didSet {
+            lock.signal()
+        }
+    }
+    
+    private let lock = DispatchSemaphore(value: 1)
     
     /// Init method with possibility to customise the NSURLSession used for the requests.
     public init(urlSession: URLSession, handlers:[ResponseHandler] = [ResponseHandler]()) {
