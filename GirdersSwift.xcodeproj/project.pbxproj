@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -22,11 +22,15 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		2220022C252781850036247F /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 2220022B252781850036247F /* SwiftPackageProductDependency */; };
+		2220022F252782240036247F /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 2220022E252782240036247F /* SwiftPackageProductDependency */; };
+		222002322527824E0036247F /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 222002312527824E0036247F /* SwiftPackageProductDependency */; };
+		22200237252783A70036247F /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 22200236252783A70036247F /* SwiftPackageProductDependency */; };
+		22D759DB25431D6400473AF6 /* GRSecurity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8376A171F55DA62002F0339 /* GRSecurity.framework */; };
+		22D759DC25431D6400473AF6 /* GRSecurity.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E8376A171F55DA62002F0339 /* GRSecurity.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		22D75A0B254322CA00473AF6 /* GRSecurity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8376A171F55DA62002F0339 /* GRSecurity.framework */; };
 		40ADA41C20C02E1C00703B4E /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40ADA41B20C02E1C00703B4E /* Container.swift */; };
 		40ADA41F20C0333B00703B4E /* TestContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40ADA41E20C0333B00703B4E /* TestContainer.swift */; };
-		7D45169E3251943569170BBC /* Pods_UnitTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F928DF890B5B2241F58230A /* Pods_UnitTest.framework */; };
-		8B5212FC473ED696EE78E1BA /* Pods_UnitTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 911CFB332010A59C00D7DEA6 /* Pods_UnitTest.framework */; };
-		911CFB302010A58100D7DEA6 /* Pods_GirdersSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 911CFB312010A58100D7DEA6 /* Pods_GirdersSwift.framework */; };
 		CA19213D1F5567C6002615ED /* TestSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA19213C1F5567C6002615ED /* TestSerialization.swift */; };
 		CA1C227F1F55565F00229381 /* TestRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1C227E1F55565F00229381 /* TestRequest.swift */; };
 		CA1E50BA1F5987F300A9FA8A /* TestConfigUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1E50B91F5987F300A9FA8A /* TestConfigUtil.swift */; };
@@ -47,13 +51,11 @@
 		E81F717620B602CE001B9B24 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81F717520B602CE001B9B24 /* Constants.swift */; };
 		E81F717920B61354001B9B24 /* HTTPPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81F717820B61354001B9B24 /* HTTPPromise.swift */; };
 		E82F15C51F4ACED100B7EC45 /* DefaultSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82F15C41F4ACED100B7EC45 /* DefaultSessionDelegate.swift */; };
-		E8368FAE252520DF00B583BC /* GRSecurity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8BEE0021F4AED0F0070BBF5 /* GRSecurity.framework */; };
 		E8376A181F55DA62002F0339 /* GRSecurity.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E8376A171F55DA62002F0339 /* GRSecurity.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E83CEAA01F387D470030C6B8 /* ConfigUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83CEA9F1F387D470030C6B8 /* ConfigUtil.swift */; };
 		E845D17920B3409500D3514D /* SSLUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E845D17820B3409500D3514D /* SSLUtil.swift */; };
 		E845D17D20B3433F00D3514D /* SwiftyBeaverLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E845D17C20B3433F00D3514D /* SwiftyBeaverLogger.swift */; };
 		E84F811A204D76A50028E29D /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84F8119204D76A50028E29D /* Errors.swift */; };
-		E852E0FC1F4ED8C600BF7C54 /* GRSecurity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8BEE0021F4AED0F0070BBF5 /* GRSecurity.framework */; };
 		E858A4521F17AA9B008AD538 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E858A4511F17AA9B008AD538 /* Utils.swift */; };
 		E878B70F1F0E27AC0052D1C3 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = E878B7081F0E27650052D1C3 /* HTTP.swift */; };
 		E878B7101F0E27B00052D1C3 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E878B7091F0E27650052D1C3 /* HTTPClient.swift */; };
@@ -68,10 +70,8 @@
 		E878B72F1F0E2FF30052D1C3 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E878B72D1F0E2FD90052D1C3 /* Serializable.swift */; };
 		E8A635BC2024A73300A3021E /* ResponseHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A635BB2024A73300A3021E /* ResponseHandlers.swift */; };
 		E8A72DBB1F445AD200BAD955 /* DateStringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A72DBA1F445AD200BAD955 /* DateStringUtils.swift */; };
-		E8B451891F30C06100DC14B8 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B451881F30C06100DC14B8 /* SwiftyBeaver.framework */; };
 		E8B4518B1F30C07E00DC14B8 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B4518A1F30C07E00DC14B8 /* Log.swift */; };
 		E8E875A61F34A2D6007F4715 /* GirdersSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = E8E875A51F34A2D6007F4715 /* GirdersSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E8EEB16A1F335D210064E3C9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8EEB1691F335D210064E3C9 /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +92,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		22D759DD25431D6400473AF6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				22D759DC25431D6400473AF6 /* GRSecurity.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E8376A161F55DA4F002F0339 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -105,16 +116,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		34E1B865F60707EC702A6657 /* Pods_GirdersSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GirdersSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3E504E1344314B7CF0B0C5E1 /* Pods-UnitTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnitTest/Pods-UnitTest.debug.xcconfig"; sourceTree = "<group>"; };
 		40ADA41B20C02E1C00703B4E /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		40ADA41E20C0333B00703B4E /* TestContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestContainer.swift; sourceTree = "<group>"; };
-		4F928DF890B5B2241F58230A /* Pods_UnitTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnitTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		779892404BD28B4F7898A7B1 /* Pods-UnitTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-UnitTest/Pods-UnitTest.release.xcconfig"; sourceTree = "<group>"; };
-		850D68D85BC7AC1F788B2DD6 /* Pods-UnitTest.coverage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitTest.coverage.xcconfig"; path = "Pods/Target Support Files/Pods-UnitTest/Pods-UnitTest.coverage.xcconfig"; sourceTree = "<group>"; };
-		911CFB312010A58100D7DEA6 /* Pods_GirdersSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_GirdersSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		911CFB332010A59C00D7DEA6 /* Pods_UnitTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_UnitTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C0F210B6EB80754B239F32F4 /* Pods-GirdersSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GirdersSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GirdersSwift/Pods-GirdersSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		CA19213C1F5567C6002615ED /* TestSerialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSerialization.swift; sourceTree = "<group>"; };
 		CA1C227E1F55565F00229381 /* TestRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRequest.swift; sourceTree = "<group>"; };
 		CA1E50B91F5987F300A9FA8A /* TestConfigUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConfigUtil.swift; sourceTree = "<group>"; };
@@ -129,8 +132,6 @@
 		CAD5E2391F4C5DDA000B4DCE /* TestUtilString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtilString.swift; sourceTree = "<group>"; };
 		CAEBA31F1F4477A2003C9193 /* TestRequestGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRequestGenerator.swift; sourceTree = "<group>"; };
 		CAEBA3211F447CC1003C9193 /* TestHTTPUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHTTPUtil.swift; sourceTree = "<group>"; };
-		D3C42DCD874731A80E7D079E /* Pods-GirdersSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GirdersSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-GirdersSwift/Pods-GirdersSwift.release.xcconfig"; sourceTree = "<group>"; };
-		E0495BDA3511DEDDB6BE9E8E /* Pods-GirdersSwift.coverage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GirdersSwift.coverage.xcconfig"; path = "Pods/Target Support Files/Pods-GirdersSwift/Pods-GirdersSwift.coverage.xcconfig"; sourceTree = "<group>"; };
 		E80036AF1F5D828600D02137 /* billTest.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = billTest.jpg; path = GirdersSwift/src/test/resources/billTest.jpg; sourceTree = SOURCE_ROOT; };
 		E81F717120B5FEF5001B9B24 /* SecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
 		E81F717320B5FF49001B9B24 /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
@@ -161,11 +162,8 @@
 		E8A635BB2024A73300A3021E /* ResponseHandlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHandlers.swift; sourceTree = "<group>"; };
 		E8A72DBA1F445AD200BAD955 /* DateStringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateStringUtils.swift; sourceTree = "<group>"; };
 		E8AD454F1F34B4F300B9F293 /* GirdersSwift-Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GirdersSwift-Swift.h"; sourceTree = "<group>"; };
-		E8B451881F30C06100DC14B8 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = frameworks/SwiftyBeaver.framework; sourceTree = "<group>"; };
 		E8B4518A1F30C07E00DC14B8 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
-		E8BEE0021F4AED0F0070BBF5 /* GRSecurity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GRSecurity.framework; path = framework/GRSecurity.framework; sourceTree = "<group>"; };
 		E8E875A51F34A2D6007F4715 /* GirdersSwift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GirdersSwift.h; sourceTree = "<group>"; };
-		E8EEB1691F335D210064E3C9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,10 +171,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				911CFB302010A58100D7DEA6 /* Pods_GirdersSwift.framework in Frameworks */,
-				E8368FAE252520DF00B583BC /* GRSecurity.framework in Frameworks */,
-				E8EEB16A1F335D210064E3C9 /* Security.framework in Frameworks */,
-				E8B451891F30C06100DC14B8 /* SwiftyBeaver.framework in Frameworks */,
+				2220022F252782240036247F /* BuildFile in Frameworks */,
+				222002322527824E0036247F /* BuildFile in Frameworks */,
+				2220022C252781850036247F /* BuildFile in Frameworks */,
+				22D759DB25431D6400473AF6 /* GRSecurity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,29 +182,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E852E0FC1F4ED8C600BF7C54 /* GRSecurity.framework in Frameworks */,
+				22200237252783A70036247F /* BuildFile in Frameworks */,
 				E878B71F1F0E29450052D1C3 /* GirdersSwift.framework in Frameworks */,
-				7D45169E3251943569170BBC /* Pods_UnitTest.framework in Frameworks */,
-				8B5212FC473ED696EE78E1BA /* Pods_UnitTest.framework in Frameworks */,
+				22D75A0B254322CA00473AF6 /* GRSecurity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		05E70503E624FD47592E9D8E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C0F210B6EB80754B239F32F4 /* Pods-GirdersSwift.debug.xcconfig */,
-				D3C42DCD874731A80E7D079E /* Pods-GirdersSwift.release.xcconfig */,
-				3E504E1344314B7CF0B0C5E1 /* Pods-UnitTest.debug.xcconfig */,
-				779892404BD28B4F7898A7B1 /* Pods-UnitTest.release.xcconfig */,
-				E0495BDA3511DEDDB6BE9E8E /* Pods-GirdersSwift.coverage.xcconfig */,
-				850D68D85BC7AC1F788B2DD6 /* Pods-UnitTest.coverage.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		40ADA41A20C02E0600703B4E /* dependencyInjection */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,13 +211,6 @@
 			isa = PBXGroup;
 			children = (
 				E8376A171F55DA62002F0339 /* GRSecurity.framework */,
-				911CFB332010A59C00D7DEA6 /* Pods_UnitTest.framework */,
-				911CFB312010A58100D7DEA6 /* Pods_GirdersSwift.framework */,
-				E8BEE0021F4AED0F0070BBF5 /* GRSecurity.framework */,
-				E8EEB1691F335D210064E3C9 /* Security.framework */,
-				E8B451881F30C06100DC14B8 /* SwiftyBeaver.framework */,
-				34E1B865F60707EC702A6657 /* Pods_GirdersSwift.framework */,
-				4F928DF890B5B2241F58230A /* Pods_UnitTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -334,7 +311,6 @@
 			children = (
 				E878B6FB1F0E25BF0052D1C3 /* GirdersSwift */,
 				E878B6FA1F0E25BF0052D1C3 /* Products */,
-				05E70503E624FD47592E9D8E /* Pods */,
 				9F15D8391FA98D9D283D5CB0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -455,11 +431,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E878B7011F0E25BF0052D1C3 /* Build configuration list for PBXNativeTarget "GirdersSwift" */;
 			buildPhases = (
-				A49AE46EDA3D9093EE960583 /* [CP] Check Pods Manifest.lock */,
 				E878B6F41F0E25BF0052D1C3 /* Sources */,
 				E878B6F51F0E25BF0052D1C3 /* Frameworks */,
 				E878B6F61F0E25BF0052D1C3 /* Headers */,
 				E878B6F71F0E25BF0052D1C3 /* Resources */,
+				22D759DD25431D6400473AF6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -467,6 +443,11 @@
 				E8B0B48C1F34A22500B87353 /* PBXTargetDependency */,
 			);
 			name = GirdersSwift;
+			packageProductDependencies = (
+				2220022B252781850036247F /* SwiftPackageProductDependency */,
+				2220022E252782240036247F /* SwiftPackageProductDependency */,
+				222002312527824E0036247F /* SwiftPackageProductDependency */,
+			);
 			productName = GirdersSwift;
 			productReference = E878B6F91F0E25BF0052D1C3 /* GirdersSwift.framework */;
 			productType = "com.apple.product-type.framework";
@@ -475,11 +456,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E878B7241F0E29450052D1C3 /* Build configuration list for PBXNativeTarget "UnitTest" */;
 			buildPhases = (
-				FA444E473004EE6DF006F07C /* [CP] Check Pods Manifest.lock */,
 				E878B7161F0E29450052D1C3 /* Sources */,
 				E878B7171F0E29450052D1C3 /* Frameworks */,
 				E878B7181F0E29450052D1C3 /* Resources */,
-				2EFC2804AF750641B14D6E42 /* [CP] Embed Pods Frameworks */,
 				CAD5E2361F4C5BDC000B4DCE /* Trema */,
 				E8376A161F55DA4F002F0339 /* CopyFiles */,
 			);
@@ -489,6 +468,9 @@
 				E878B7211F0E29450052D1C3 /* PBXTargetDependency */,
 			);
 			name = UnitTest;
+			packageProductDependencies = (
+				22200236252783A70036247F /* SwiftPackageProductDependency */,
+			);
 			productName = UnitTest;
 			productReference = E878B71A1F0E29450052D1C3 /* UnitTest.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -525,6 +507,12 @@
 				en,
 			);
 			mainGroup = E878B6EF1F0E25BF0052D1C3;
+			packageReferences = (
+				2220022A252781850036247F /* RemoteSwiftPackageReference */,
+				2220022D252782240036247F /* RemoteSwiftPackageReference */,
+				222002302527824E0036247F /* RemoteSwiftPackageReference */,
+				22200233252782CB0036247F /* RemoteSwiftPackageReference */,
+			);
 			productRefGroup = E878B6FA1F0E25BF0052D1C3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -557,48 +545,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2EFC2804AF750641B14D6E42 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UnitTest/Pods-UnitTest-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
-				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
-				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
-				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHHTTPStubs.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UnitTest/Pods-UnitTest-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A49AE46EDA3D9093EE960583 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-GirdersSwift-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		CAD5E2361F4C5BDC000B4DCE /* Trema */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -624,7 +570,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "mkdir -p \"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap\"\ncat <<EOF > \"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap/module.modulemap\"\nmodule GirdersSwift {\n    header \"${SDKROOT}/usr/include/CommonCrypto/CommonCrypto.h\"\n    export *\n}\nEOF";
+			shellScript = "mkdir -p \"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap\"\ncat <<EOF > \"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap/module.modulemap\"\nmodule GirdersSwift {\n    header \"${SDKROOT}/usr/include/CommonCrypto/CommonCrypto.h\"\n    export *\n}\nEOF\n";
 		};
 		E8E875A71F34A614007F4715 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -638,24 +584,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "#cp \"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap/module.modulemap\" \"${SRCROOT}/\"";
-		};
-		FA444E473004EE6DF006F07C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-UnitTest-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -839,7 +767,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -848,7 +777,6 @@
 		};
 		E878B7021F0E25BF0052D1C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C0F210B6EB80754B239F32F4 /* Pods-GirdersSwift.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				APPLICATION_EXTENSION_API_ONLY = YES;
@@ -870,7 +798,11 @@
 				);
 				INFOPLIST_FILE = GirdersSwift/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.netcetera.GirdersSwift;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -886,7 +818,6 @@
 		};
 		E878B7031F0E25BF0052D1C3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D3C42DCD874731A80E7D079E /* Pods-GirdersSwift.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				APPLICATION_EXTENSION_API_ONLY = YES;
@@ -908,7 +839,11 @@
 				);
 				INFOPLIST_FILE = GirdersSwift/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.netcetera.GirdersSwift;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -922,7 +857,6 @@
 		};
 		E878B7221F0E29450052D1C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3E504E1344314B7CF0B0C5E1 /* Pods-UnitTest.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -934,7 +868,11 @@
 					"$(PROJECT_DIR)/framework",
 				);
 				INFOPLIST_FILE = GirdersSwift/src/test/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.netcetera.UnitTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -946,7 +884,6 @@
 		};
 		E878B7231F0E29450052D1C3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 779892404BD28B4F7898A7B1 /* Pods-UnitTest.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
@@ -957,7 +894,11 @@
 					"$(PROJECT_DIR)/framework",
 				);
 				INFOPLIST_FILE = GirdersSwift/src/test/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.netcetera.UnitTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1047,7 +988,6 @@
 		};
 		E8BF0BB32019EB8C00D876D4 /* Coverage */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E0495BDA3511DEDDB6BE9E8E /* Pods-GirdersSwift.coverage.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				APPLICATION_EXTENSION_API_ONLY = YES;
@@ -1069,7 +1009,11 @@
 				);
 				INFOPLIST_FILE = GirdersSwift/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.netcetera.GirdersSwift;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -1085,7 +1029,6 @@
 		};
 		E8BF0BB42019EB8C00D876D4 /* Coverage */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 850D68D85BC7AC1F788B2DD6 /* Pods-UnitTest.coverage.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1097,7 +1040,11 @@
 					"$(PROJECT_DIR)/framework",
 				);
 				INFOPLIST_FILE = GirdersSwift/src/test/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.netcetera.UnitTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1159,6 +1106,64 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2220022A252781850036247F /* RemoteSwiftPackageReference */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyBeaver/SwiftyBeaver";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.7.0;
+			};
+		};
+		2220022D252782240036247F /* RemoteSwiftPackageReference */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mxcl/PromiseKit";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 6.8.3;
+			};
+		};
+		222002302527824E0036247F /* RemoteSwiftPackageReference */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 3.2.0;
+			};
+		};
+		22200233252782CB0036247F /* RemoteSwiftPackageReference */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AliSoftware/OHHTTPStubs";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2220022B252781850036247F /* SwiftPackageProductDependency */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2220022A252781850036247F /* RemoteSwiftPackageReference */;
+			productName = SwiftyBeaver;
+		};
+		2220022E252782240036247F /* SwiftPackageProductDependency */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2220022D252782240036247F /* RemoteSwiftPackageReference */;
+			productName = PromiseKit;
+		};
+		222002312527824E0036247F /* SwiftPackageProductDependency */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 222002302527824E0036247F /* RemoteSwiftPackageReference */;
+			productName = KeychainAccess;
+		};
+		22200236252783A70036247F /* SwiftPackageProductDependency */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 22200233252782CB0036247F /* RemoteSwiftPackageReference */;
+			productName = OHHTTPStubsSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E878B6F01F0E25BF0052D1C3 /* Project object */;
 }
