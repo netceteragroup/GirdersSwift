@@ -1,12 +1,12 @@
 Pod::Spec.new do |s|
   s.name     = 'GirdersSwift'
-  s.version = '0.5.7'
+  s.version = '0.5.9'
   s.summary  = 'Girders for iOS, written in Swift.'
   s.homepage = 'https://www.netcetera.com'
   s.author   = 'Netcetera'
   s.description = 'A library that reduces development time for iOS Swift applications.'
-  s.platform = :ios, '9.0'
-  s.source = { :git => 'https://github.com/netceteragroup/GirdersSwift.git', :tag => '0.5.7' }
+  s.platform = :ios, '11.0'
+  s.source = { :git => 'https://github.com/netceteragroup/GirdersSwift.git', :tag => '0.5.9' }
   s.requires_arc = true
   s.swift_version = "5.0"
   s.module_name = 'GirdersSwift'
@@ -26,9 +26,9 @@ Pod::Spec.new do |s|
 
 
   s.source_files = 'GirdersSwift/src/main/**/*.{swift}'
-  s.dependency 'SwiftyBeaver', '1.7.0'
-  s.dependency 'KeychainAccess', '3.2.0'
-  s.dependency 'PromiseKit', '6.8.3'
+  s.dependency 'SwiftyBeaver', '1.9.5'
+  s.dependency 'KeychainAccess', '4.2.2'
+  s.dependency 'PromiseKit', '6.17.1'
   s.frameworks = 'Foundation', 'Security'
   s.vendored_frameworks = 'framework/GRSecurity.framework'
 
