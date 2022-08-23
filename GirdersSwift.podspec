@@ -10,9 +10,9 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.swift_version = "5.0"
   s.module_name = 'GirdersSwift'
-  s.xcconfig = { 'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/GirdersSwift',
+  s.xcconfig = { 'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/Sources/GirdersSwift',
                  'SWIFT_ACTIVE_COMPILATION_CONDITIONS[config=Debug]' => 'DEBUG' }
-  s.user_target_xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '"${PODS_ROOT}/GirdersSwift/framework"',
+  s.user_target_xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '"${PODS_ROOT}/Sources"',
                               'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
@@ -25,11 +25,11 @@ Pod::Spec.new do |s|
               } }
 
 
-  s.source_files = 'GirdersSwift/src/main/**/*.{swift}'
+  s.source_files = 'Sources/GirdersSwift/**/*.{swift}'
   s.dependency 'SwiftyBeaver', '1.9.5'
   s.dependency 'KeychainAccess', '4.2.2'
   s.dependency 'PromiseKit', '6.17.1'
   s.frameworks = 'Foundation', 'Security'
-  s.vendored_frameworks = 'framework/GRSecurity.framework'
+  s.vendored_frameworks = 'Sources/GRSecurity.framework'
 
 end
