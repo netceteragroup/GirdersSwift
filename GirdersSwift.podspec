@@ -30,6 +30,6 @@ Pod::Spec.new do |s|
   s.dependency 'KeychainAccess', '4.2.2'
   s.dependency 'PromiseKit', '6.17.1'
   s.frameworks = 'Foundation', 'Security'
-  s.vendored_frameworks = 'Sources/GRSecurity.framework'
+  s.vendored_frameworks = 'Sources/GRSecurity.xcframework'
 
 end
