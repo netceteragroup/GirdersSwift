@@ -17,6 +17,32 @@ GirdersSwift is a new framework, written in Swift, that has several modules that
 
 We plan to add several new modules in the future, all build in the open. Feel free to get in touch with ideas extending the framework.
 
+## Installation
+
+See the subsections below for details about the different installation methods.
+1. [CocoaPods](#CocoaPods)
+1. [Swift Package Manager](#Swift-Package-Manager)
+
+### CocoaPods
+
+In order to use GirdersSwift with CocoaPods you have to update your Podfile with adding GirdersSwift as a pod.
+```ruby
+pod 'GirdersSwift', 'version'
+```
+
+### Swift Package Manager
+
+To integrate GirdersSwift into your Xcode project using Swift Package Manager (SPM), open your App in Xcode and open **File > Add Packages**. Then add the SDK by entering the git repo url in the top right search field: 
+```https://github.com/netceteragroup/GirdersSwift.git```
+You can define your dependency rule by selecting the SDK version (or branch), and then click the "Add Package" button. 
+Alternatively, when having project that uses Package.swift file to manage dependencies, you can specify the target with name:
+
+```swift
+.package(name: "GirdersSwift", url: "https://github.com/netceteragroup/GirdersSwift", from: "VERSION_NUMBER"),
+```
+
+>NOTE: Girders Swift supports SPM starting with version: "0.6.0"
+
 ## Core philosophy ##
 
 *"A good architect maximizes the number of decisions not made"* — Robert Martin.
