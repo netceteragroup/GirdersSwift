@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "grsecurity",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/NikitaGerasimoski/GRSecurity.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "abddde4acf13e77b46a425df8df05ed0ea32fc8c"
+      }
+    },
+    {
       "identity" : "keychainaccess",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/kishikawakatsumi/KeychainAccess.git",
