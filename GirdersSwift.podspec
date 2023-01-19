@@ -12,9 +12,7 @@ Pod::Spec.new do |s|
   s.module_name = 'GirdersSwift'
   s.xcconfig = { 'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/Sources/GirdersSwift',
                  'SWIFT_ACTIVE_COMPILATION_CONDITIONS[config=Debug]' => 'DEBUG' }
-  s.user_target_xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '"${PODS_ROOT}/Sources"',
-                              'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  s.user_target_xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '"${PODS_ROOT}/Sources"' }
 
   s.license = { :type => 'commercial', :text => %{
                  The copyright to the computer program(s) herein is the property of
