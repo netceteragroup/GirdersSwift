@@ -154,6 +154,15 @@ public struct MutableRequest : RequestGenerator {
             self.queryString =
                 params.urlEncodedQueryStringWithEncoding(encoding: String.Encoding.utf8)
         }
+        if let params = parameters as? [URLQueryItem] {
+            var urlComponents = URLComponents()
+            let encodedQueryParams = params.map {
+                URLQueryItem(name: $0.name.urlEncodedStringWithEncoding(),
+                             value: $0.value?.urlEncodedStringWithEncoding())
+            }
+            urlComponents.queryItems = encodedQueryParams
+            self.queryString = urlComponents.query!
+        }
     }
     
     public mutating func updateSSLCredentials(sslCredentials: SSLCredentials) {
