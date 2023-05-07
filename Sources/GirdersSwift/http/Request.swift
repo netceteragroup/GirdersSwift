@@ -150,11 +150,10 @@ public struct MutableRequest : RequestGenerator {
     }
     
     public mutating func updateQueryParameters(parameters: Any?) {
-        if let params = parameters as? [String: AnyObject] {
-            self.queryString =
-                params.urlEncodedQueryStringWithEncoding(encoding: String.Encoding.utf8)
-        }
-        if let params = parameters as? [URLQueryItem] {
+        switch parameters {
+        case let params as [String: AnyObject]:
+            self.queryString = params.urlEncodedQueryStringWithEncoding(encoding: String.Encoding.utf8)
+        case let params as [URLQueryItem]:
             var urlComponents = URLComponents()
             let encodedQueryParams = params.map {
                 URLQueryItem(name: $0.name.urlEncodedStringWithEncoding(),
@@ -162,6 +161,8 @@ public struct MutableRequest : RequestGenerator {
             }
             urlComponents.queryItems = encodedQueryParams
             self.queryString = urlComponents.query!
+        default:
+            self.queryString = nil
         }
     }
     

@@ -107,6 +107,24 @@ class TestMutableRequest: XCTestCase {
         
         XCTAssertNotNil(request.parameters)
     }
+
+    func testUpdateQueryParameters() {
+        var request = mockGenerator.generateRequest(withMethod: .GET)
+        let queryParameters = [URLQueryItem(name: "token", value: "token1")]
+
+        request.updateQueryParameters(parameters: queryParameters)
+        
+        XCTAssertNotNil(request.queryString)
+    }
+    
+    func testUpdateQueryParametersFromUnsupportedType() {
+        var request = mockGenerator.generateRequest(withMethod: .GET)
+        let queryParameters = ["param1=value1", "param2=value2"]
+
+        request.updateQueryParameters(parameters: queryParameters)
+
+        XCTAssertNil(request.queryString)
+    }
     
     func testupdateHTTPHeaderFields() {
         var request = mockGenerator.request(withMethod: .POST) |> mockGenerator.withBasicAuth |> mockGenerator.withJsonSupport
