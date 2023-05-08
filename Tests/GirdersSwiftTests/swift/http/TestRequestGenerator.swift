@@ -108,7 +108,43 @@ class TestMutableRequest: XCTestCase {
         XCTAssertNotNil(request.parameters)
     }
     
-    func testupdateHTTPHeaderFields() {
+    func testQueryParametersAreProperlySetWhenURLQueryItemConfigurationIsUsed() {
+        let queryParameters = [URLQueryItem(name: "token1", value: "token1"),
+                               URLQueryItem(name: "token2", value: "token2")]
+        let request = mutableRequestWithQuery(queryParameters)
+        XCTAssertTrue(request.queryString!.contains("token1=token1"))
+        XCTAssertTrue(request.queryString!.contains("token2=token2"))
+    }
+    
+    func testQueryParametersAreSetWhenEqualKeysAreBeingUsed() {
+        let queryParameters = [URLQueryItem(name: "token1", value: "token1"),
+                               URLQueryItem(name: "token1", value: "token2")]
+
+        let request = mutableRequestWithQuery(queryParameters)
+        XCTAssertTrue(request.queryString!.contains("token1=token1"))
+        XCTAssertTrue(request.queryString!.contains("token1=token2"))
+    }
+    
+    func testURLEscapeEncodingIsAppliedInQueryString() {
+        let param1 = "New Parameter"
+        let value1 = "Hello, world!"
+        
+        let queryParameters = [URLQueryItem(name: param1, value: value1)]
+        let request = mutableRequestWithQuery(queryParameters)
+        XCTAssertEqual(request.queryString!,
+                       ("\(param1.urlEncodedStringWithEncoding())=\(value1.urlEncodedStringWithEncoding())"))
+    }
+    
+    func testUpdateQueryParametersFromUnsupportedType() {
+        var request = mockGenerator.generateRequest(withMethod: .GET)
+        let queryParameters = ["param1=value1", "param2=value2"]
+
+        request.updateQueryParameters(parameters: queryParameters)
+
+        XCTAssertNil(request.queryString)
+    }
+    
+    func testUpdateHTTPHeaderFields() {
         var request = mockGenerator.request(withMethod: .POST) |> mockGenerator.withBasicAuth |> mockGenerator.withJsonSupport
         
         XCTAssertEqual(request.headerFields["Accept"], "application/json")
@@ -120,4 +156,13 @@ class TestMutableRequest: XCTestCase {
         
         XCTAssertNotNil(request.headerFields["Test1"])
     }
+    
+    //  MARK: - Private
+    
+    private func mutableRequestWithQuery(_ params: Any) -> MutableRequest {
+        var request = mockGenerator.generateRequest(withMethod: .GET)
+        request.updateQueryParameters(parameters: params)
+        return request
+    }
+    
 }
