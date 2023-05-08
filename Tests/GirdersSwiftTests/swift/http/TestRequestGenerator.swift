@@ -107,12 +107,6 @@ class TestMutableRequest: XCTestCase {
         
         XCTAssertNotNil(request.parameters)
     }
-
-    func mutableRequestWithQuery(_ params: Any) -> MutableRequest {
-        var request = mockGenerator.generateRequest(withMethod: .GET)
-        request.updateQueryParameters(parameters: params)
-        return request
-    }
     
     func testQueryParametersAreProperlySetWhenURLQueryItemConfigurationIsUsed() {
         let queryParameters = [URLQueryItem(name: "token1", value: "token1"),
@@ -150,7 +144,7 @@ class TestMutableRequest: XCTestCase {
         XCTAssertNil(request.queryString)
     }
     
-    func testupdateHTTPHeaderFields() {
+    func testUpdateHTTPHeaderFields() {
         var request = mockGenerator.request(withMethod: .POST) |> mockGenerator.withBasicAuth |> mockGenerator.withJsonSupport
         
         XCTAssertEqual(request.headerFields["Accept"], "application/json")
@@ -162,4 +156,13 @@ class TestMutableRequest: XCTestCase {
         
         XCTAssertNotNil(request.headerFields["Test1"])
     }
+    
+    //  MARK: - Private
+    
+    private func mutableRequestWithQuery(_ params: Any) -> MutableRequest {
+        var request = mockGenerator.generateRequest(withMethod: .GET)
+        request.updateQueryParameters(parameters: params)
+        return request
+    }
+    
 }
