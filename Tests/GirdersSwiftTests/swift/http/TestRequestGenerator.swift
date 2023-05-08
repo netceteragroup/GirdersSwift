@@ -108,13 +108,37 @@ class TestMutableRequest: XCTestCase {
         XCTAssertNotNil(request.parameters)
     }
 
-    func testUpdateQueryParameters() {
+    func mutableRequestWithQuery(_ params: Any) -> MutableRequest {
         var request = mockGenerator.generateRequest(withMethod: .GET)
-        let queryParameters = [URLQueryItem(name: "token", value: "token1")]
+        request.updateQueryParameters(parameters: params)
+        return request
+    }
+    
+    func testQueryParametersAreProperlySetWhenURLQueryItemConfigurationIsUsed() {
+        let queryParameters = [URLQueryItem(name: "token1", value: "token1"),
+                               URLQueryItem(name: "token2", value: "token2")]
+        let request = mutableRequestWithQuery(queryParameters)
+        XCTAssertTrue(request.queryString!.contains("token1=token1"))
+        XCTAssertTrue(request.queryString!.contains("token2=token2"))
+    }
+    
+    func testQueryParametersAreSetWhenEqualKeysAreBeingUsed() {
+        let queryParameters = [URLQueryItem(name: "token1", value: "token1"),
+                               URLQueryItem(name: "token1", value: "token2")]
 
-        request.updateQueryParameters(parameters: queryParameters)
+        let request = mutableRequestWithQuery(queryParameters)
+        XCTAssertTrue(request.queryString!.contains("token1=token1"))
+        XCTAssertTrue(request.queryString!.contains("token1=token2"))
+    }
+    
+    func testURLEscapeEncodingIsAppliedInQueryString() {
+        let param1 = "New Parameter"
+        let value1 = "Hello, world!"
         
-        XCTAssertNotNil(request.queryString)
+        let queryParameters = [URLQueryItem(name: param1, value: value1)]
+        let request = mutableRequestWithQuery(queryParameters)
+        XCTAssertEqual(request.queryString!,
+                       ("\(param1.urlEncodedStringWithEncoding())=\(value1.urlEncodedStringWithEncoding())"))
     }
     
     func testUpdateQueryParametersFromUnsupportedType() {
