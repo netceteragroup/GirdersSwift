@@ -22,7 +22,6 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		020F40AE28B3A12E00B28721 /* billTest.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 020F40AD28B3A12D00B28721 /* billTest.jpg */; };
 		020F40B328B3A24A00B28721 /* texts.trm in Resources */ = {isa = PBXBuildFile; fileRef = 020F40B228B3A24A00B28721 /* texts.trm */; };
 		0237786D28B4BDE200CFD5D9 /* GRSecurity.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0237786C28B4BDE200CFD5D9 /* GRSecurity.xcframework */; };
 		40ADA41C20C02E1C00703B4E /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40ADA41B20C02E1C00703B4E /* Container.swift */; };
@@ -101,7 +100,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		020F40AD28B3A12D00B28721 /* billTest.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = billTest.jpg; sourceTree = "<group>"; };
 		020F40B228B3A24A00B28721 /* texts.trm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = texts.trm; sourceTree = "<group>"; };
 		0237786C28B4BDE200CFD5D9 /* GRSecurity.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GRSecurity.xcframework; sourceTree = "<group>"; };
 		3E504E1344314B7CF0B0C5E1 /* Pods-UnitTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnitTest/Pods-UnitTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -332,7 +330,6 @@
 			isa = PBXGroup;
 			children = (
 				020F40B128B3A24A00B28721 /* trema */,
-				020F40AD28B3A12D00B28721 /* billTest.jpg */,
 				CA1E50BB1F598B5500A9FA8A /* Configuration.plist */,
 				CA7DAA041F866D140087BEA5 /* Configuration-env.plist */,
 			);
@@ -528,7 +525,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				020F40AE28B3A12E00B28721 /* billTest.jpg in Resources */,
 				020F40B328B3A24A00B28721 /* texts.trm in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
