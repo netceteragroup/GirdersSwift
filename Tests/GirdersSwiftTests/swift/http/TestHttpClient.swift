@@ -26,7 +26,6 @@ class TestHttpClient: XCTestCase {
     }
     
     func testThatHttpClientExecutesGetWithUrl() {
-        //let urlPath = testBundle.url(forResource: "billTest", withExtension: "jpg")
         let urlPath = URL(string: "https://google.com")
         let request = Request(URL: urlPath!, method: HTTPMethod.GET)
         
