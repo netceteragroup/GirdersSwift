@@ -42,6 +42,44 @@ class TestRequest: XCTestCase {
         XCTAssertNotNil(request)
     }
     
+    func testRequestWithAdditionalHeaders() {
+        // Given
+        let url = URL(string: "https://www.example.com/api")!
+        let method: HTTPMethod = .GET
+        let parameters: [String : Any] = [:]
+        let additionalHeaders: [String: String] = ["User-Agent": "MyApp/1.0"]
+
+        // When
+        let request = Request(URL: url,
+                              method: method,
+                              parameters: parameters,
+                              additionalHeaders: additionalHeaders,
+                              requestGenerator: mockGenerator)
+        let sortedHeaderFields = request.headerFields.sorted { $0.key < $1.key }
+        let sortedDictionary = Dictionary(uniqueKeysWithValues: sortedHeaderFields)
+
+        // Then
+        XCTAssertEqual(sortedDictionary, ["Accept": "application/json", "User-Agent": "MyApp/1.0"])
+    }
+
+    func testRequestWithoutAdditionalHeaders() {
+        // Given
+        let url = URL(string: "https://www.example.com/api")!
+        let method: HTTPMethod = .GET
+        let parameters: [String : Any] = [:]
+
+        // When
+        let request = Request(URL: url,
+                              method: method,
+                              parameters: parameters,
+                              requestGenerator: mockGenerator)
+        let sortedHeaderFields = request.headerFields.sorted { $0.key < $1.key }
+        let sortedDictionary = Dictionary(uniqueKeysWithValues: sortedHeaderFields)
+
+        // Then
+        XCTAssertEqual(sortedDictionary, ["Accept": "application/json"])
+    }
+
     /**
          Testing == operator, when Requests are equal
     */

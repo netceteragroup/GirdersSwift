@@ -73,11 +73,13 @@ public struct Request: Equatable {
                 method: HTTPMethod,
                 parameters: [String: Any],
                 queryParameters: [String: Any] = [:],
+                additionalHeaders: [String: String] = [:],
                 requestGenerator: RequestGenerator) {
         var mutableRequest = requestGenerator.generateRequest(withMethod: method)
         mutableRequest.updateParameters(parameters: parameters)
         mutableRequest.updateQueryParameters(parameters: queryParameters)
-        
+        mutableRequest.updateHTTPHeaderFields(headerFields: additionalHeaders)
+
         if method == .GET && mutableRequest.queryString != nil {
             if let queryString = URL.appendQueryString(queryString: mutableRequest.queryString!) {
                 self.url = queryString
