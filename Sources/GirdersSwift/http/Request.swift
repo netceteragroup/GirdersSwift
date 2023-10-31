@@ -110,11 +110,15 @@ public struct Request: Equatable {
         self.sslCredentials = mutableRequest.sslCredentials
     }
     
-    public init(URL: URL, method: HTTPMethod = .GET, parameters: [String: AnyObject] = [:]) {
+    public init(URL: URL,
+                method: HTTPMethod = .GET,
+                parameters: [String: AnyObject] = [:],
+                additionalHeaders: [String: String] = [:]) {
         let requestGenerator = StandardRequestGenerator()
         self.init(URL: URL,
                   method: method,
                   parameters: parameters,
+                  additionalHeaders: additionalHeaders,
                   requestGenerator: requestGenerator)
     }
     

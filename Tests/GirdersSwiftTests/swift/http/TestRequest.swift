@@ -46,15 +46,14 @@ class TestRequest: XCTestCase {
         // Given
         let url = URL(string: "https://www.example.com/api")!
         let method: HTTPMethod = .GET
-        let parameters: [String : Any] = [:]
+        let parameters: [String : AnyObject] = [:]
         let additionalHeaders: [String: String] = ["User-Agent": "MyApp/1.0"]
 
         // When
         let request = Request(URL: url,
                               method: method,
                               parameters: parameters,
-                              additionalHeaders: additionalHeaders,
-                              requestGenerator: mockGenerator)
+                              additionalHeaders: additionalHeaders)
         let sortedHeaderFields = request.headerFields.sorted { $0.key < $1.key }
         let sortedDictionary = Dictionary(uniqueKeysWithValues: sortedHeaderFields)
 
@@ -66,13 +65,12 @@ class TestRequest: XCTestCase {
         // Given
         let url = URL(string: "https://www.example.com/api")!
         let method: HTTPMethod = .GET
-        let parameters: [String : Any] = [:]
+        let parameters: [String : AnyObject] = [:]
 
         // When
         let request = Request(URL: url,
                               method: method,
-                              parameters: parameters,
-                              requestGenerator: mockGenerator)
+                              parameters: parameters)
         let sortedHeaderFields = request.headerFields.sorted { $0.key < $1.key }
         let sortedDictionary = Dictionary(uniqueKeysWithValues: sortedHeaderFields)
 
