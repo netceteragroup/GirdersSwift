@@ -122,6 +122,8 @@ public extension RequestGenerator {
 
 }
 
-struct StandardRequestGenerator: RequestGenerator {
+public struct StandardRequestGenerator: RequestGenerator {
+    
+    public init() { }
     
 }

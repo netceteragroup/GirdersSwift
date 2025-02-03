@@ -113,11 +113,12 @@ public struct Request: Equatable {
     public init(URL: URL,
                 method: HTTPMethod = .GET,
                 parameters: [String: AnyObject] = [:],
-                additionalHeaders: [String: String] = [:]) {
-        let requestGenerator = StandardRequestGenerator()
+                additionalHeaders: [String: String] = [:],
+                requestGenerator: RequestGenerator = StandardRequestGenerator()) {
         self.init(URL: URL,
                   method: method,
                   parameters: parameters,
+                  queryParameters: [:],
                   additionalHeaders: additionalHeaders,
                   requestGenerator: requestGenerator)
     }

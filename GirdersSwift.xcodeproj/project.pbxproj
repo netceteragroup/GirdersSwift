@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -595,7 +595,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}\"/GirdersSwift/src/test/packaging/trema.rb \"${SRCROOT}/GirdersSwift/src/test/resources/trema/texts.trm\" \"${CODESIGNING_FOLDER_PATH}\"";
+			shellScript = "\"${SRCROOT}\"/Tests/GirdersSwiftTests/resources/trema/trema.rb \"${SRCROOT}/Tests/GirdersSwiftTests/resources/trema/texts.trm\" \"${CODESIGNING_FOLDER_PATH}\"\n";
 		};
 		E8B0B48A1F34A20700B87353 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
