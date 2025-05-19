@@ -5,13 +5,11 @@ source 'https://cdn.cocoapods.org/'
 use_frameworks!
 
 target :GirdersSwift do
-  pod 'SwiftyBeaver', '1.9.5'
   pod 'PromiseKit', '6.17.1'
   pod 'KeychainAccess', '4.2.2'
 end
 
 target :UnitTest do
-  pod 'SwiftyBeaver', '1.9.5'
   pod 'OHHTTPStubs/Swift', '7.0.0'
 end
 

@@ -9,22 +9,15 @@ public func loadConfig(fromResource resource: String, bundle: Bundle = Bundle.ma
     let resource = resource as NSString
     let filename = resource.lastPathComponent as NSString
     let url = bundle.url(forResource: filename.deletingPathExtension,
-                              withExtension: resource.pathExtension)
+                         withExtension: resource.pathExtension)
     
-    guard let pathUrl = url else {
-        return [:]
-    }
+    guard let pathUrl = url,
+          let data = try? Data.init(contentsOf: pathUrl),
+          let dict = try? PropertyListSerialization.propertyList(from: data,
+                                                                 options: [],
+                                                                 format: nil) as? [String : Any] else { return [:] }
     
-    do {
-        let data = try Data.init(contentsOf: pathUrl)
-        let dict = try PropertyListSerialization.propertyList(from: data,
-                                                              options: [],
-                                                              format: nil) as? [String : Any]
-        return dict ?? [:]
-    } catch {
-        Log.error("error loading configuration")
-        return [:]
-    }
+    return dict
 }
 
 /// Returns the plist path as a string for a given resource and bundle.

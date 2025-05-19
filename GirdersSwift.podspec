@@ -24,7 +24,6 @@ Pod::Spec.new do |s|
 
 
   s.source_files = 'Sources/GirdersSwift/**/*.{swift}'
-  s.dependency 'SwiftyBeaver', '1.9.5'
   s.dependency 'KeychainAccess', '4.2.2'
   s.dependency 'PromiseKit', '6.17.1'
   s.frameworks = 'Foundation', 'Security'
