@@ -330,15 +330,17 @@ let username = KeychainStorage.shared.string(forKey: Constants.Username)
 
 #### Logging ####
 
-There's a LogProtocol, which enables you to log at different levels, such as:
-- verbose
-- debug
-- info
-- warning
-- error
-- fatal
+Logging supports multiple levels, controlled via the "logLevel" key in your Configuration.plist. This value sets the minimum level of logs to be shown — logs below this threshold are ignored.
 
-An implementation is provided with another open sourced logger, SwiftyBeaver (https://github.com/SwiftyBeaver/SwiftyBeaver). You can control the log level for different environments by setting the logLevel value in the Configuration.plist file.
+Log levels:
+debug = 0  
+info  = 1  
+error = 2  
+fault = 3
+
+For example, if you set "logLevel": 2 (i.e., error) in Configuration.plist, only Log.error(...) and Log.fault(...) will be logged — Log.debug(...) and Log.info(...) will be ignored.
+
+You can manage log levels across different environments by using environment-specific Configuration.plist files.
 
 #### Translation ####
 
