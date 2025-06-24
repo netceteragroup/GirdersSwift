@@ -76,7 +76,7 @@ public class Container {
             
             return result
         } else {
-            fatalError("Registration not found")
+            fatalError("Registration not found: \(key)")
         }
     }
     
